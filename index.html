@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- reset css -->
     <link rel="stylesheet" href="./assets/css/reset.css" />
+    <!-- gsap.min.js -->
+    <script src="./ScrollTrigger.min.js"></script>
+    <!-- scrollTrigger -->
+    <script src="./gsap.min.js"></script>
     <!-- style.css -->
     <link rel="stylesheet" href="./assets/css/style.css" />
     <!-- font awesome -->
@@ -106,10 +110,6 @@
       content="./assets/favicon/ms-icon-144x144.png"
     />
     <meta name="theme-color" content="#ffffff" />
-    <!-- gsap.min.js -->
-    <script src="./gsap.min.js"></script>
-    <!-- scrollTrigger -->
-    <script src="./ScrollTrigger.min.js"></script>
 
     <title>VHU Tuyển sinh</title>
   </head>
@@ -135,7 +135,7 @@
                 <a href="#" class="navbar__list--link">View360</a>
               </li>
               <li class="navbar__list--item">
-                <a href="#" class="navbar__list--link">Ngành xét tuyển </a>
+                <a href="#" class="navbar__list--link">Xét tuyển </a>
               </li>
               <li class="navbar__list--item">
                 <a href="#" class="navbar__list--link"
@@ -248,8 +248,16 @@
         </div>
       </div>
       <div class="intro">
-        <img src="./assets/img/2ak2sgqbmj49i5cjjebsqcgami.png" alt="" class="cloud cl1">
-        <img src="./assets/img/2ak2sgqbmj49i5cjjebsqcgami.png" alt="" class="cloud cl2">
+        <img
+          src="./assets/img/2ak2sgqbmj49i5cjjebsqcgami.png"
+          alt=""
+          class="cloud cl1"
+        />
+        <img
+          src="./assets/img/2ak2sgqbmj49i5cjjebsqcgami.png"
+          alt=""
+          class="cloud cl2"
+        />
         <div class="container">
           <div class="intro__body">
             <div class="intro__content">
@@ -275,11 +283,9 @@
                 class="intro__video"
               ></iframe>
             </div>
-           
           </div>
           <div class="intro__bottom">
             <div class="intro__bottom--list">
-              
               <div class="intro__bottom--item">
                 <div class="intro__filter"></div>
                 <img
@@ -287,7 +293,10 @@
                   alt=""
                   class="intro__bt--img"
                 />
-                <p class="intro__img--desc">Xét tuyển theo kết quả thi đánh giá năng lực do ĐHQG TP. HCM tổ chức</p>
+                <p class="intro__img--desc">
+                  Xét tuyển theo kết quả thi đánh giá năng lực do ĐHQG TP. HCM
+                  tổ chức
+                </p>
               </div>
               <div class="intro__bottom--item">
                 <div class="intro__filter"></div>
@@ -296,7 +305,10 @@
                   alt=""
                   class="intro__bt--img"
                 />
-                <p class="intro__img--desc">Xét tuyển theo kết quả thi đánh giá năng lực do ĐHQG TP. HCM tổ chức</p>
+                <p class="intro__img--desc">
+                  Xét tuyển theo kết quả thi đánh giá năng lực do ĐHQG TP. HCM
+                  tổ chức
+                </p>
               </div>
               <div class="intro__bottom--item">
                 <div class="intro__filter"></div>
@@ -305,15 +317,81 @@
                   alt=""
                   class="intro__bt--img"
                 />
-                <p class="intro__img--desc">Xét tuyển theo kết quả thi đánh giá năng lực do ĐHQG TP. HCM tổ chức</p>
+                <p class="intro__img--desc">
+                  Xét tuyển theo kết quả thi đánh giá năng lực do ĐHQG TP. HCM
+                  tổ chức
+                </p>
               </div>
-            <div class="dots">
-              <div class="dot"></div>
-              <div class="dot"></div>
-              <div class="dot"></div>
-            </div>
+              <div class="dots">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+              </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div class="horizontalt">
+        <div class="first panel croll1">
+          <div class="ctn1">
+            <div class="container">
+              <div class="test orange hightline">
+                <h1 class="thutuc">Hệ thống đào tạo</h1>
+                <div class="thutuc__list">
+                  <div class="thutuc__item">
+                    <img src="./assets/img/chatluongdaotao02.jpeg" alt="" />
+                  </div>
+                  <div class="thutuc__item">
+                    <img src="./assets/img/chatluongdaotao02.jpeg" alt="" />
+                  </div>
+                  <div class="thutuc__item">
+                    <img src="./assets/img/chatluongdaotao02.jpeg" alt="" />
+                  </div>
+                  <div class="thutuc__item">
+                    <img src="./assets/img/chatluongdaotao02.jpeg" alt="" />
+                  </div>
+                  <div class="thutuc__item">
+                    <img src="./assets/img/chatluongdaotao02.jpeg" alt="" />
+                  </div>
+                  <div class="thutuc__item">
+                    <img src="./assets/img/chatluongdaotao02.jpeg" alt="" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="test orange">ok</div> -->
+          </div>
+        </div>
+        <div class="first panel croll2">
+          <div class="ctn1">
+            <div class="test yellow">
+              <div class="container">
+                <h1 class="heading__phuongthuc">Phương thức xét tuyển</h1>
+                <div class="phuongthuc__list">
+                  <div class="phuongthuc__item">
+                    <img src="./assets/img/chatluongdaotao02.jpeg" alt="" />
+                    <img src="./assets/img/chatluongdaotao02.jpeg" alt="" />
+                    <img src="./assets/img/chatluongdaotao02.jpeg" alt="" />
+                  </div>
+                </div>
+                <p class="desc">
+                  Các chính sách miễn giảm học phí và hỗ trợ tài chính từ Văn Hiến nhằm đồng hành và giúp đỡ sinh viên trong suốt quá trình
+                  học tập tại trường.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="first panel croll3">
+          <div class="ctn1">
+            <div class="test red"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="activiti">
+        <div class="container">
+          <div class="activiti__body"></div>
         </div>
       </div>
     </main>
