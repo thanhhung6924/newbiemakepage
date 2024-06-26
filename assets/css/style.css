@@ -254,6 +254,8 @@ a {
 }
 .info {
   background-color: var(--blue);
+
+  width: 100%;
 }
 .intro__video {
   height: 310px;
@@ -315,6 +317,9 @@ a {
 /* intro */
 .intro {
   background-color: #00bae2;
+  height: 100vh;
+  position: relative;
+  /* overflow: hidden; */
 }
 .intro__heading {
   font-size: 3.4rem;
@@ -328,7 +333,7 @@ a {
   flex-direction: column;
   gap: 30px;
 }
-.intro__body{
+.intro__body {
   padding: 60px;
 }
 .intro__desc {
@@ -336,10 +341,75 @@ a {
   font-weight: 500;
   color: white;
   line-height: 2.2rem;
-  
 }
 .intro__content {
   display: flex;
   align-items: center;
   justify-content: space-around;
+}
+.intro__bt--img {
+  width: 100%;
+  height: 100%;
+}
+.intro__bottom--item {
+  position: relative;
+  width: 30%;
+  height: 250px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.intro__bottom--list {
+  display: flex;
+  padding-bottom: 40px;
+  margin-top: 50px;
+position: relative;
+  justify-content: space-between;
+}
+.intro__filter {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  z-index: 0;
+}
+.intro__img--desc {
+  line-height: 24px;
+  padding: 30px;
+  align-items: center;
+  position: absolute;
+  z-index: 10;
+  bottom: 5%;
+  font-size: 2rem;
+  /* letter-spacing: 1px; */
+  color: white;
+  font-weight: 500;
+  width: 90%;
+  left: 5%;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+.cloud {
+  position: absolute;
+  height: 100px;
+}
+.cl1 {
+  top: 100px;
+}
+.cl2 {
+  right: 0;
+  bottom: 50%;
+}
+.dots{
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  gap: 20px;
+  left: 47%;
+}
+.dot {
+  
+  z-index: 100;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: #afc3cf;
 }
