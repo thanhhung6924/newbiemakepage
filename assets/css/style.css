@@ -753,7 +753,7 @@ a {
   grid-area: bt;
 }
 .form {
-  background-image: url(../img/download\\(1\).webp);
+  background-image: url(../img/download\ \(1\).webp);
 }
 .form__body {
   height: 100vh;
