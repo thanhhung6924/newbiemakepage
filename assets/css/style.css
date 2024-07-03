@@ -27,6 +27,7 @@ a {
   top: 0;
   z-index: 4;
   backdrop-filter: blur(10px);
+  transition: 0.5s;
 }
 .logo__icon {
   width: 50px;
@@ -34,9 +35,19 @@ a {
 }
 .header__top {
   display: flex;
+  top: 0;
   justify-content: space-between;
   align-items: center;
   height: 70px;
+}
+.scrolltop {
+  background-color: #ffffff;
+  color: white;
+  transition: 0.5s;
+  opacity: 0;
+
+  top: 0;
+  transform: scale(1.02);
 }
 .container {
   width: 1300px;
@@ -47,6 +58,7 @@ a {
   display: flex;
   align-items: center;
   gap: 5px;
+  width: 200px;
 }
 .navbar__list {
   display: flex;
@@ -247,6 +259,7 @@ a {
 .info__number {
   font-size: 3rem;
   font-weight: 900;
+  display: inline;
   color: white;
 }
 .info__desc {
@@ -259,6 +272,7 @@ a {
   background-color: var(--blue);
 
   width: 100%;
+  height: auto;
 }
 .intro__video {
   height: 310px;
@@ -321,7 +335,7 @@ a {
 /* intro */
 .intro {
   background-color: #00bae2;
-  height: 100vh;
+
   position: relative;
   /* overflow: hidden; */
 }
@@ -411,14 +425,51 @@ a {
 }
 .dot {
   z-index: 100;
-  height: 15px;
-  width: 15px;
+  height: 12px;
+  width: 12px;
   border-radius: 50%;
   background-color: #afc3cf;
 }
 /* 
 
  */
+.hook__body {
+  background-color: var(--blue);
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  height: 250px;
+}
+.hook__heading {
+  font-size: 2.8rem;
+  font-weight: 600;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: white;
+}
+.hook__item .hook__heading {
+  font-size: 4rem;
+  font-weight: 900;
+}
+.hook__desc {
+  color: white;
+  margin-top: 20px;
+  width: 80%;
+}
+.discovery {
+  margin-left: calc(10% - 48px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hook__list {
+  display: flex;
+  width: 50%;
+}
+.hook__item {
+  width: 40%;
+}
+
 .horizontalt {
   background-image: url("../img/download.webp");
   width: 400%;
@@ -651,6 +702,10 @@ a {
   align-items: center;
   justify-content: center;
 }
+.csvc__heading {
+  text-align: end;
+  margin-bottom: 40px;
+}
 .csvc__desc {
   color: rgb(255, 255, 255);
 
@@ -698,7 +753,7 @@ a {
   grid-area: bt;
 }
 .form {
-  background-image: url("../img/download\ \(1\).webp");
+ background-image: url(../img/download\ \(1\).webp);
 }
 .form__body {
   height: 100vh;
@@ -722,9 +777,109 @@ a {
   font-size: 4rem;
   font-weight: 400;
 }
+.contact {
+  background-color: oldlace;
+ padding: 40px;
+}
+.contact__body {
+  height: 60vh;
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  font-size: 3.4rem;
+  width: 500px;
+  color: white;
+  background-color: #000000;
+  border: 1px solid rgb(0, 0, 0);
+}
 .footer__body {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 70vh;
+}
+.it1 {
+  background-color: rgb(27, 30, 44);
+}
+.it2 {
+  background-image: url(../img/download\\(4\)webp);
+}
+.it3 {
+}
+.reason__item {
+  height: 450px;
+  object-fit: cover;
+  background-size: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center ;
+}
+.heaing__main {
+  text-align: center;
+  font-size: 4rem;
+  color: #ffffff;
+  font-weight: 800;
+}
+.desc__main{
+  color: #e5e7eb;
+  font-size: 1.8rem;
+  line-height: 24px;
+}
+.reason__heading {
+  text-align: center;
+  font-size: 3rem;
+  color: #000000;
+  font-weight: 800;
+}
+.rh1 {
+  text-align: start;
+  color: white;
+}
+.rh3,.rh2 {
+  text-align: start;
+  color: rgb(5, 5, 5);
+ 
+}
+.reason__img{
+  height: 200px;
+  width: 300px;color: #000000;
+  background-color: #000000 ;
+}
+.reason__item  .container{
+  display: flex;
+  justify-content: space-between;
+
+}
+ .container .reason__content{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.btn__reason{
+  width: 200px;
+  height: 40px;
+  background-color:orangered;
+  border-radius: 100px   ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: white;
+  letter-spacing: 2px;
+}
+.title__main .container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+  padding: 40px;
+  
+}
+.title__main{
+  background-color: rgb(70, 74, 201);
+  
 }
