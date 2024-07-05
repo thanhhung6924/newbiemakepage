@@ -720,6 +720,7 @@ a {
   overflow: hidden;
 }
 .csvc__list {
+  padding-bottom: 80px;
   height: 100%;
   display: grid;
   gap: 10px;
@@ -753,7 +754,7 @@ a {
   grid-area: bt;
 }
 .form {
-  background-image: url(../img/download\ \(1\).webp);
+  background-image: url(../img/download\\(1\).webp);
 }
 .form__body {
   height: 100vh;
