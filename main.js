@@ -186,4 +186,14 @@ $(".btn__reason").click(function () {
 });
 
 
+  $(".desc__hide").slideUp();
+  
+  $(".mation__heading").click(function() {
+    $(this).next().slideToggle();
+    console.log("ok");
+  });
 
+
+
+////////////////////////////////
+///from
