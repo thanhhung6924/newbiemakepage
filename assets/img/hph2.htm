@@ -1,0 +1,1917 @@
+
+<!DOCTYPE html ">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>
+	Happy Young House nhà trọ hiện đại dành cho sinh viên Văn Hiến
+</title><link href="/Components/bootstrap/css/bootstrap.min.css" rel="stylesheet" /><link href="/Components/AnimateCss/animate.css" rel="stylesheet" />
+
+    <script type="text/javascript" src="/Scripts/jquery-2.1.4.min.js"></script>
+    <link rel="shortcut icon" type="image/png" href="/Resources/ImagesPortal/HomePage/imgs/logo-32x32.png" />
+    
+    <script type="text/javascript" src="/Scripts/jquery.smoove.js"></script>
+    <script type="text/javascript" src="/Components/Waypoint/jquery.waypoints.min.js"></script>
+    
+    <script type="text/javascript" src="/Components/bootstrap/Js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/Scripts/knockout-2.3.0.js"></script>
+    <script src="/Scripts/Common.js" type="text/javascript"></script>
+
+	<!--<script src="https://chat.vhu.edu.vn/Scripts/jquery-3.2.1.min.js"></script>
+  <script src="https://chat.vhu.edu.vn/Scripts/ChatBoxWeb.js"></script> -->
+
+	<meta property="og:title" content="Trường Đại Học Văn Hiến" />​	<meta property="og:url" content="vhu.edu.vn" /><meta property="og:image" content="https://vhu.edu.vn/Resources/Images/SubDomain/HomePage/2019/tuy%E1%BB%83n%20sinh/Logo-cac-truong-dai-hoc-tai-viet-nam-logo-truong-dai-hoc-van-hien.png" />
+
+    <script src="/Scripts/PagingContent.js" type="text/javascript"></script>
+    <script src="/Scripts/zebra_dialog.js" type="text/javascript"></script>
+
+    <link href="/CSS/zebra_dialog.css" rel="stylesheet" /><link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,300&amp;subset=latin,vietnamese,latin-ext" rel="stylesheet" /><link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic&amp;subset=latin,vietnamese,latin-ext" rel="stylesheet" />
+
+    <script src="/Resources/ImagesPortal/HomePage/vendors/js/responsive-tabs.js"></script>
+    
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WKLXDWL');</script>
+<!-- End Google Tag Manager -->
+<meta name="facebook-domain-verification" content="4pca4wwfz56e374t117ataud2gy3t2" />
+<!-- Global site tag (gtag.js) - Google Ads: 882366856 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-882366856"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-882366856');
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-138422409-1"></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-138422409-1');</script>
+
+    <script language="javascript" type="text/javascript">
+
+        var pscjq = jQuery.noConflict();
+
+        function SearchProcess(event, query) {
+            if (event.keyCode == 13) {
+                OnSearch(query);
+                return false;
+            }
+            return true;
+        }
+        function OnSearch(query) {
+            PSCPortal.Services.CMS.SearchAndPaging(query, currentPage, OnSearchSuccess, OnSearchFailed);
+        }
+
+        function OnSearchSuccess(results, context, methodName) {
+            //var position = results.indexOf('_');
+            //totalRecords = results.substring(0, position);
+            //results = results.substring(position + 1);
+            LoadContentAndPaging(results);
+        }
+        function OnSearchFailed(results, context, methodName) {
+        }
+
+        function retitleUrl(str) {
+            str = str.replace(/^\s+|\s+$/g, ''); // trim
+            str = str.toLowerCase();
+            // remove accents, swap ñ for n, etc
+            var from = "àáảãạăằắẳẵặâầấẩẫậđèéẻẽẹêềếểễệìíỉĩịòóỏõọôồốổỗộơờớởỡợùúủũụưừứửữựỳýỷỹỵ·/_,:;";
+            var to = "aaaaaaaaaaaaaaaaadeeeeeeeeeeeiiiiiooooooooooooooooouuuuuuuuuuuyyyyy------";
+            for (var i = 0, l = from.length; i < l; i++) {
+                str = str.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i));
+            }
+            str = str.replace(/[^a-z0-9 -]/g, '') // remove invalid chars
+                .replace(/\s+/g, '-') // collapse whitespace and replace by -
+                .replace(/-+/g, '-'); // collapse dashes
+            return str;
+        };
+
+        function popunder() {
+            pscjq('a').not('[href^="http"],[href^="https"],[href^="mailto:"],[href^="#"]').each(function () {
+                pscjq(this).attr('href', function (index, value) {
+                    if (value != undefined) {
+                        var index = value.indexOf("Default.aspx");
+                        if (index >= 0)
+                            return value = "/" + value.substring(index, value.length);
+
+                    }
+                });
+            });
+        }
+        //popup dialog
+        function showDialogInfomation(dialogId) {
+            PSCPortal.Services.CMS.GetArticleContent(dialogId, GetArticleContentCallback);
+        }
+        function GetArticleContentCallback(result) {
+            //pscjq.Zebra_Dialog({
+            //    source: { 'inline': result },
+            //    'type': false,
+            //    'buttons': false,
+            //    'width': 900,
+            //    'animation_speed_show': 200,
+            //});         
+
+            pscjq('#articleModal').find('.modal-body').html(result);
+            pscjq('#articleModal').modal();
+
+            pscjq('#articleModal').find('.modal-body').html(result);
+            pscjq('#articleModal').modal();
+
+        }
+
+
+
+    </script>
+    <script type="text/javascript">
+        pscjq(window).scroll(function () {
+            if (pscjq(this).scrollTop() > 50) {
+                pscjq('.backtotop').fadeIn();
+            } else {
+                pscjq('.backtotop').fadeOut();
+            }
+        });
+
+        pscjq('.backtotop').click(function () {
+            pscjq('body,html').animate({
+                scrollTop: 0
+            }, 800);
+            return false;
+        });
+    </script>
+
+    <script type="text/html" id="search-binding-template">
+        <div class="s-tintuc">
+            <div class='result_lucene'>
+                Kết quả tìm thấy:<a data-bind="html: Count" href='#'></a>
+            </div>
+            
+            <div class='nd_news'>
+                <!-- ko foreach: Data -->
+                <div style="margin: 5px 0px 5px 0px; float: left; width: 100%;">
+                    <h4><a class="title_topicdisplay" data-bind="attr: { href: Link }, html: Title"></a></h4>
+                    <h3 class="h3_content" data-bind="html: Highligth + '...'"></h3>
+                </div>
+                <!-- /ko -->
+                <div align='center' id='pagingContentHolder' class='ct_topic_r1'></div>
+            </div>
+        </div>
+    </script>
+
+    <script type="text/javascript">
+        /* (function ($) {           
+             fakewaffle.responsiveTabs(['xs', 'sm']);
+         })(jQuery);*/
+
+
+        pscjq(function () {
+
+            pscjq('a[href="#toggle-search"], .bootsnipp-search .input-group-btn > .btn[type="reset"]').on('click', function (event) {
+                event.preventDefault();
+                pscjq('.bootsnipp-search .input-group > input').val('');
+                pscjq('.bootsnipp-search').toggleClass('open');
+                pscjq('a[href="#toggle-search"]').closest('li').toggleClass('active');
+
+                if (pscjq('.bootsnipp-search').hasClass('open')) {
+                    /* I think .focus dosen't like css animations, set timeout to make sure input gets focus */
+                    setTimeout(function () {
+                        pscjq('.bootsnipp-search .form-control').focus();
+                    }, 100);
+                }
+            });
+
+            pscjq(document).on('keyup', function (event) {
+                if (event.which == 27 && pscjq('.bootsnipp-search').hasClass('open')) {
+                    pscjq('a[href="#toggle-search"]').trigger('click');
+                }
+            });
+            //hover menu
+            pscjq('ul.nav li[class^="dropdown"]').hover(function () {
+                pscjq(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+            }, function () {
+                pscjq(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+            });
+        });
+    </script>
+<link href="/WebResource.axd?d=SKrXQxOj660mCcaUoVI6SzRfFg39F7Ix-1I-_5gPnqO8TRPWdTm5yq-6zFmR3lflPKPUWpJWS1QYKWuLLi4kJJ6ZcR13v6CJN9Q-xzPFIzToODU-xY4CatWDhckKYnnV7djk4726WAw3j0OAb0zCag2&amp;t=638423073240000000" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/WebResource.axd?d=76SLr9rfji-fAZDISpEK9m18FXM0xJrcalDc9_8iHQVXXGnx4jKnqTVJYze7u3PDoRDz0q86cBH1_VNqv0ZABIUJeiI08joWeSIfbnJ2c0PQGtBUsjsdAm1c5E0rucquBbGZmV1of_xKmsg6dkX4OBJpJ4Om7eQJdTs484yD3Kk1&amp;t=638423073240000000" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /></head>
+<body id="bd" class="homepage home-layout1 res" onload='popunder();'>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WKLXDWL"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+    <form name="form1" method="post" action="./happy-young-house-nha-tro-hien-dai-danh-cho-sinh-vien-van-hien" id="form1">
+<div>
+<input type="hidden" name="RadScriptManager1_TSM" id="RadScriptManager1_TSM" value="" />
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPaA8FDzhkY2EyOGRiNzE2NzIzMRgCBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WAgURUmFkV2luZG93TWFuYWdlcjEFF2N0bDE1JGN0bDAzJHJ3VXNlckxvZ2luBRljdGwxNSRjdGwwMyRSYWREYXRhUGFnZXIxDxQrAARkZgIKZmTyZJ4HY2sB3IgC5sKLhaT625wEQ3wIG+JZLhkaFG/q8A==" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=no8UFxoKONetzw4GcEJR0RLI2qkKt_wk84zOk5O4ANqJodpAEFlotvHy94_dUpypdjiJS_9gABBFue5G0kT2-FpHKtSZC9baJqprcnny86I1&amp;t=638465307187615987" type="text/javascript"></script>
+
+
+<script src="/Telerik.Web.UI.WebResource.axd?_TSM_HiddenField_=RadScriptManager1_TSM&amp;compress=1&amp;_TSM_CombinedScripts_=%3b%3bSystem.Web.Extensions%2c+Version%3d4.0.0.0%2c+Culture%3dneutral%2c+PublicKeyToken%3d31bf3856ad364e35%3avi-VN%3a97d7cfc3-9653-421f-ae1b-e8cee27133af%3aea597d4b%3ab25378d2%3bTelerik.Web.UI%2c+Version%3d2024.1.131.45%2c+Culture%3dneutral%2c+PublicKeyToken%3d121fae78165ba3d4%3avi-VN%3a9948a144-ff46-44f4-9ae0-6f54d8eaff7b%3a16e4e7cd%3af7645509%3a24ee1bba%3ab2e06756%3a92fe8ea0%3afa31b949%3ac128760b%3a874f8ea2%3a4877f69a%3a33715776%3a19620875%3af46195d3%3a490a9d4e%3abd8f85e4" type="text/javascript"></script>
+<script src="../../Services/PortletProxy.asmx/js" type="text/javascript"></script>
+<script src="../../Services/ModuleProxy.asmx/js" type="text/javascript"></script>
+<script src="../../Services/CMS.asmx/js" type="text/javascript"></script>
+<script src="../../Services/WeatherService.asmx/js" type="text/javascript"></script>
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334" />
+</div>
+        <div id="RadWindowManager1" style="display:none;">
+	<!-- 2024.1.131.45 --><div id="RadWindowManager1_alerttemplate" style="display:none;">
+        <div class="rwDialogPopup radalert">
+            <div class="rwDialogText">
+            {1}
+            </div>
+
+            <div>
+                <a  onclick="$find('{0}').close(true);"
+                class="rwPopupButton" href="javascript:void(0);">
+                    <span class="rwOuterSpan">
+                        <span class="rwInnerSpan">##LOC[OK]##</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+        </div><div id="RadWindowManager1_prompttemplate" style="display:none;">
+         <div class="rwDialogPopup radprompt">
+                <div class="rwDialogText">
+                {1}
+                </div>
+                <div>
+                    <script type="text/javascript">
+                    function RadWindowprompt_detectenter(id, ev, input)
+                    {
+                        if (!ev) ev = window.event;
+                        if (ev.keyCode == 13)
+                        {
+                            var but = input.parentNode.parentNode.getElementsByTagName("A")[0];
+                            if (but)
+                            {
+                                if (but.click) but.click();
+                                else if (but.onclick)
+                                {
+                                    but.focus(); var click = but.onclick; but.onclick = null; if (click) click.call(but);
+                                }
+                            }
+                           return false;
+                        }
+                        else return true;
+                    }
+                    </script>
+                    <input title="Enter Value" onkeydown="return RadWindowprompt_detectenter('{0}', event, this);" type="text"  class="rwDialogInput" value="{2}" />
+                </div>
+                <div>
+                    <a onclick="$find('{0}').close(this.parentNode.parentNode.getElementsByTagName('input')[0].value);"
+                        class="rwPopupButton" href="javascript:void(0);" ><span class="rwOuterSpan"><span class="rwInnerSpan">##LOC[OK]##</span></span></a>
+                    <a onclick="$find('{0}').close(null);" class="rwPopupButton"  href="javascript:void(0);"><span class="rwOuterSpan"><span class="rwInnerSpan">##LOC[Cancel]##</span></span></a>
+                </div>
+            </div>
+        </div><div id="RadWindowManager1_confirmtemplate" style="display:none;">
+        <div class="rwDialogPopup radconfirm">
+            <div class="rwDialogText">
+            {1}
+            </div>
+            <div>
+                <a onclick="$find('{0}').close(true);"  class="rwPopupButton" href="javascript:void(0);" ><span class="rwOuterSpan"><span class="rwInnerSpan">##LOC[OK]##</span></span></a>
+                <a onclick="$find('{0}').close(false);" class="rwPopupButton"  href="javascript:void(0);"><span class="rwOuterSpan"><span class="rwInnerSpan">##LOC[Cancel]##</span></span></a>
+            </div>
+        </div>
+        </div><input id="RadWindowManager1_ClientState" name="RadWindowManager1_ClientState" type="hidden" />
+</div>
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('RadScriptManager1', 'form1', [], [], [], 90, '');
+//]]>
+</script>
+
+        
+<link href="/Resources/ImagesPortal/HomePage/css/jquery.smartmenus.bootstrap.css" rel="stylesheet" />
+<link href="/Resources/ImagesPortal/HomePage/css/VH_styles_2.css" rel="stylesheet" />
+
+<link href="/Resources/ImagesPortal/HomePage/css/review.css" rel="stylesheet" />
+<link href="/Resources/ImagesPortal/HomePage/vendors/css/normalize.css" rel="stylesheet" />
+<link href="/Resources/ImagesPortal/HomePage/vendors/css/font-awesome.min.css" rel="stylesheet" />
+<link href="/Resources/ImagesPortal/HomePage/css/VH_styles_chitiet.css" rel="stylesheet" />
+<link href="/Resources/ImagesPortal/HomePage/css/VH_styles_list_tin_tuc.css" rel="stylesheet" />
+<link href="/Resources/ImagesPortal/HomePage/css/VH_styles_lienhe.css" rel="stylesheet" />
+<script src="/Resources/ImagesPortal/HomePage/js/jquery.smartmenus.min.js"></script>
+<script src="/Resources/ImagesPortal/HomePage/js/jquery.smartmenus.bootstrap.min.js"></script>
+<link href="/Resources/ImagesPortal/HomePage/css/VH_fix.css" rel="stylesheet" />
+<link href="/Resources/ImagesPortal/HomePage/css/swiper.min.css" rel="stylesheet" />
+<script src="/Resources/ImagesPortal/HomePage/js/swiper.jquery.min.js"></script>
+<div id="page">
+<div id="psc-divPanelWrapper">
+	<div id="psc-divPanelTop" style="width:100%; float:left;">
+		<div id="psc-divPanelTop-Content" style="min-height: 30px;">
+			<div id="psc-divPortlet-8588a143-8c99-406b-92a1-c4125e04e003" class="psc-divPortlet-Wrapper" style="float:left;width:100%">
+				<div class="psc-divPortlet-Content">
+					
+<link href="/Portlets/MenuRad/Menu.Green.css" rel="stylesheet" type="text/css" />
+<style>
+    .dropdown-menu > li > a {
+        border-left: 0px solid #2e894f;
+		color: #fff;
+		font-size: 16px;
+		font-weight: 400;
+		padding: 10px 20px;
+		white-space: nowrap;
+    }
+
+        .open .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus,
+        .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+            background-color: #2e894f;
+            border-left-width: 5px;
+            padding-left: 15px;
+            color: #fff !important;
+        }
+</style>
+<header id="top-header" class="width-common">
+            <section class="t-wrapper">
+                <div class="top-link">
+                    <ul>
+                      <li class="one">
+                            <a href="/module/sitemap?menuid=a0a4db85-dfc3-442f-a551-7af4334eb0ef" title="Sitemap">Sitemap</a>
+                            <span class="slash">|</span>
+                            <a href="/module/lien-he" title="Liên hệ">liên hệ</a>
+                            <span class="slash">|</span>
+                            <a href="#" title="Language">language:</a>			
+                        </li>
+			<li class=""><a href="http://vhu.edu.vn/" title="Language"><img alt="" class="img-responsive" src="/Resources/ImagesPortal/HomePage/imgs/icon/vietnamese.png" style="width: 35px; height: 22px;" /></a></li>
+			<li class=""><a href="http://en.vhu.edu.vn/" title="Language"><img alt="" class="img-responsive" src="/Resources/ImagesPortal/HomePage/imgs/icon/English.png" style="width: 35px; height: 22px;" /></a></li>
+                        <li class="two">
+                            <a href="https://www.facebook.com/vhu.edu.vn" title="facebook"><span class="fa fa-facebook-square" aria-hidden="true"></span></a>
+                            <!-- <a href="https://plus.google.com/+VhuEduVn-daihocvanhien/videos" title="google-plus"><span class="fa fa-google-plus-square" aria-hidden="true"></span></a> -->
+                            <a href="https://www.youtube.com/user/DHVanHien" title="youtube"><span class="fa fa-youtube-square" aria-hidden="true"></span></a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- ./top-link -->
+
+                <div class="top-menu">
+                    <!-- Navbar static top -->
+                    <div class="navbar navbar-default navbar-static-top" role="navigation">
+                        <div class="container">
+                            <div class="navbar-header">								
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>								
+								<div class="mobile-search">
+									<input type="text" name="search" placeholder="Tìm kiếm..." id="txtSearchArticlemb" onkeydown="return SearchProcess(event,document.getElementById('txtSearchArticlemb').value);">
+								</div>
+                                 <a class="navbar-brand" href="https://vhu.edu.vn"><img alt="" src="/Resources/Images/SubDomain/HomePage/Logo/1Logo_VHU.png" />
+</a>
+                                
+                            </div>
+                            <div class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
+                                <!-- Right nav -->
+                                <ul class="nav navbar-nav" data-smartmenus-id="14769270401181482">
+                                   <li><a  href='#'  >GIỚI THIỆU<span class='caret'></span></a><ul class='dropdown-menu '><li><a href='/vi/lich-su-hinh-thanh-va-phat-trien-1014/lich-su-hinh-thanh-va-phat-trien-cua-truong-dai-hoc-van-hien'>Lịch sử hình thành và phát triển</a></li><li><a href='/vi/su-mang-tam-nhin/su-mang-tam-nhin-4227'>Sứ mạng - Tầm nhìn </a></li><li><a href='/vi/hoi-dong-truong/hoi-dong-truong-0231'>Hội đồng trường</a></li><li><a href='/vi/ban-dieu-hanh-1/bdh'>Ban điều hành </a></li><li><a href='/vi/hoi-dong-khoa-hoc-va-dao-tao-1/hoi-dong-khoa-hoc-va-dao-tao-2935'>Hội đồng khoa học và Đào tạo</a></li><li><a href='http://vhu.edu.vn/vi/bo-nhan-dien-thuong-hieu/y-nghia-ve-logo-va-slogan-cua-truong-dai-hoc-van-hien'>Bộ nhận diện thương hiệu</a></li><li><a href='/vi/ke-hoach-chien-luoc'>Kế hoạch chiến lược</a></li><li><a href='https://ttktdbcl.vhu.edu.vn/vi/ba-cong-khai-1533'>Ba công khai</a></li><li><a href='#' class='wobble-horizontal' title='Kiểm định chất lượng'>Kiểm định chất lượng <span class='caret'></span></a><ul class='dropdown-menu'><li><a href='/vi/chuong-trinh-dao-tao-2011'>Chương trình đào tạo</a></li><li><a href='/vi/co-so-dao-tao'>Cơ sở đào tạo</a></li><li><a href='/vi/qs-stars'>QS Stars</a></li></ul></li></ul></li><li><a  href='http://tuyensinh.vhu.edu.vn/'  >TUYỂN SINH <span class='caret'></span></a><ul class='dropdown-menu '><li><a href='https://sdh.vhu.edu.vn/'>Tuyển sinh Tiến sĩ</a></li><li><a href='https://sdh.vhu.edu.vn/'>Tuyển sinh Thạc sĩ</a></li><li><a href='https://ts.vhu.edu.vn/'>Tuyển sinh Đại học</a></li><li><a href='https://lienthong.vhu.edu.vn/'>Tuyển sinh Liên thông</a></li><li><a href='https://vanbang2.vhu.edu.vn/'>Tuyển sinh Văn bằng 2</a></li><li><a href='https://tuyensinhtuxa.vhu.edu.vn/'>Tuyển sinh đào tạo từ xa</a></li><li><a href='https://dangky.vhu.edu.vn/#/ChucNang/GhiDanh'>Đăng ký xét tuyển online</a></li><li><a href='/vi/he-thong-dao-tao/tuyen-sinh-lien-ket'>Tuyển sinh liên kết</a></li><li><a href='https://sotay.vhu.edu.vn/'>Sổ tay tuyển sinh</a></li></ul></li><li><a  href='/vi/qldt-vhu-edu-vn/vi'  >ĐÀO TẠO<span class='caret'></span></a><ul class='dropdown-menu '><li><a href='https://qldt.vhu.edu.vn/vi/noi-dung-chuong-trinh'>Chương trình đào tạo Đại học</a></li><li><a href='https://sdhdtqt.vhu.edu.vn/vi/chuong-trinh-dao-tao-1580'>Chương trình đào tạo Thạc sĩ</a></li><li><a href='https://sdhdtqt.vhu.edu.vn/vi/chuong-trinh-dao-tao-1567'>Chương trình đào tạo Tiến sĩ</a></li><li><a href='http://qldt.vhu.edu.vn/vi/chuan-dau-ra'>Chuẩn đầu ra</a></li></ul></li><li><a  href='#'  >KHOA<span class='caret'></span></a><ul class='dropdown-menu '><li><a href='http://dl.vhu.edu.vn/'>Khoa Du lịch</a></li><li><a href='https://yd.vhu.edu.vn/'>Khoa Y -Dược</a></li><li><a href='http://nn.vhu.edu.vn/'>Khoa Ngoại ngữ</a></li><li><a href='https://nt.vhu.edu.vn/'>Khoa Nghệ thuật</a></li><li><a href='https://ktqt.vhu.edu.vn/'>Khoa Kinh tế - Quản trị</a></li><li><a href='https://dph.vhu.edu.vn/'>Khoa Đông Phương học</a></li><li><a href='https://kttc.vhu.edu.vn/'>Khoa Kế toán - Tài chính</a></li><li><a href='https://cntt.vhu.edu.vn/'>Khoa Công nghệ thông tin</a></li><li><a href='http://ktcn.vhu.edu.vn/'>Khoa Kỹ thuật - Công nghệ</a></li><li><a href='https://xhtt.vhu.edu.vn/'>Khoa Xã Hội - Truyền Thông</a></li></ul></li><li><a  href='#'  >TRUNG TÂM<span class='caret'></span></a><ul class='dropdown-menu '><li><a href='https://viendoanhtri.vhu.edu.vn/'>Viện Doanh Trí</a></li><li><a href='https://ttth.vhu.edu.vn/'>Trung tâm Tin học</a></li><li><a href='https://lib.vhu.edu.vn/'>Trung tâm Học liệu</a></li><li><a href='https://litc.vhu.edu.vn/'>Trung tâm Ngoại ngữ</a></li><li><a href='https://vapec.vhu.edu.vn/'>Viện Chuyển Giao Kết Nối APEC</a></li><li><a href='http://htdn.vhu.edu.vn/'>Trung tâm Hợp tác doanh nghiệp</a></li><li><a href='https://sdhdtqt.vhu.edu.vn/'>Viện Sau đại học & Đào tạo quốc tế</a></li><li><a href='https://tuyensinh.vhu.edu.vn/'>Trung tâm Tư vấn tuyển sinh </a></li><li><a href='https://tttstt.vhu.edu.vn/'>Trung tâm Truyền thông và Tuyển sinh trực tuyến</a></li><li><a href='https://dttts.vhu.edu.vn/'>Trung tâm Đào tạo Thể thao Số</a></li><li><a href='https://csnh.vhu.edu.vn/'>Trung Tâm Chăm sóc Người Học </a></li><li><a href='https://pvcdsv.vhu.edu.vn/'>Trung tâm Phục vụ Cộng đồng Sinh viên</a></li><li><a href='http://ttktdbcl.vhu.edu.vn/'>Trung tâm Khảo thí và Đảm bảo chất lượng</a></li><li><a href='https://thamvantamly.vhu.edu.vn/'>Trung tâm Tham vấn tâm lý</a></li></ul></li><li><a  href='#'  >PHÒNG BAN<span class='caret'></span></a><ul class='dropdown-menu '><li><a href='https://doanhoi.vhu.edu.vn/'>Đoàn - Hội </a></li><li><a href='https://alumni.vhu.edu.vn/'>Hội cựu sinh viên</a></li><li><a href='https://tckh.vhu.edu.vn/'>Tạp chí khoa học</a></li><li><a href='http://qldt.vhu.edu.vn/'>Phòng Quản lý đào tạo</a></li><li><a href='http://tckt.vhu.edu.vn/'>Phòng Tài chính - Kế toán</a></li><li><a href='http://hcns.vhu.edu.vn/'>Phòng Hành chính Nhân sự</a></li><li><a href='https://qlkhhtqt.vhu.edu.vn/'>Phòng Quản lý khoa học & Hợp tác quốc tế</a></li></ul></li><li ><a href='https://tuyendung.vhu.edu.vn/'>TUYỂN DỤNG</a></li>
+<li class="hidden-xs"><a href="#toggle-search"><span class="glyphicon glyphicon-search"></span></a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                            <!--/.nav-collapse -->
+                        </div>
+                        <!--/.container -->
+						<div class="bootsnipp-search animate">
+                            <div class="container">
+                                <form action="http://bootsnipp.com/search" method="GET" role="search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" name="q" placeholder="Search ..." id="txtSearchArticle" onkeydown="return SearchProcess(event,document.getElementById('txtSearchArticle').value);">
+                                        <span class="input-group-btn">
+										<button class="btn btn-danger" type="reset"><span class="glyphicon glyphicon-remove"></span>
+                                        </button>
+                                        </span>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.navbar -->
+                </div>
+                <!-- ./top-menu -->
+
+            </section>
+        </header>
+				</div>
+			</div><div id="psc-divPortlet-678de253-94ff-4036-b83f-0b1060b22b40" class="psc-divPortlet-Wrapper" style="width:100%; float:left;">
+				<div class="psc-divPortlet-Content">
+					
+
+<link href="/Portlets/NivoSlider/CSS/nivo-slider.css" rel="stylesheet" />
+<link href="/Portlets/NivoSlider/CSS/themes/default/default.css" rel="stylesheet" />
+<script src="/Scripts/knockout-2.3.0.js"></script>
+<script src="/Portlets/NivoSlider/Scripts/jquery.nivo.slider.js"></script>
+<script src="/Portlets/NivoSlider/Scripts/System.Utility.NivoSlider.js"></script>
+<script type="text/javascript">
+    pscjq(function () {
+        (new System.Utility.NivoSlider('ctl15_psc-portlet-678de253-94ff-4036-b83f-0b1060b22b40_slider', '[]')).CreateSlider();
+    });
+</script>
+<div class="slider_outter">
+    <div class="slider1">
+        <div class="slider-wrapper theme-default">
+            <div id="ctl15_psc-portlet-678de253-94ff-4036-b83f-0b1060b22b40_slider" class="nivoSlider">
+                <!-- ko foreach: $data -->
+                <a data-bind="attr: { href: Link }" target="_blank">
+                    <img data-bind="attr: { src: '/' + Url, title: Title }" /></a>
+                <!-- /ko -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+				</div>
+			</div><div id="psc-divPortlet-85b09204-b607-4e76-9f28-8c50274d1cca" class="psc-divPortlet-Wrapper" style="width:100%; float:left;">
+				<div class="psc-divPortlet-Content">
+					
+
+<link href="/Portlets/NivoSlider/CSS/nivo-slider.css" rel="stylesheet" />
+<link href="/Portlets/NivoSlider/CSS/themes/default/default.css" rel="stylesheet" />
+<script src="/Scripts/knockout-2.3.0.js"></script>
+<script src="/Portlets/NivoSlider/Scripts/jquery.nivo.slider.js"></script>
+<script src="/Portlets/NivoSlider/Scripts/System.Utility.NivoSlider.js"></script>
+<script type="text/javascript">
+    pscjq(function () {
+        (new System.Utility.NivoSlider('ctl15_psc-portlet-85b09204-b607-4e76-9f28-8c50274d1cca_slider', '[{"Id":"5f7c857f-88a5-41f5-8bcc-7ca0fa53c093","Title":"","Url":"Resources/imagesPortlet/85b09204-b607-4e76-9f28-8c50274d1cca/Cover-Fanpage 6.png","Link":"","Order":9,"DataId":"85b09204-b607-4e76-9f28-8c50274d1cca"},{"Id":"ea161081-6808-4bb3-9ee7-417ef77dd995","Title":"","Url":"Resources/imagesPortlet/85b09204-b607-4e76-9f28-8c50274d1cca/myU 1.png","Link":"https://dangky.vhu.edu.vn/tuyen-sinh","Order":8,"DataId":"85b09204-b607-4e76-9f28-8c50274d1cca"},{"Id":"680b64e4-edbd-417b-9e9f-299228db7ec7","Title":"","Url":"Resources/imagesPortlet/85b09204-b607-4e76-9f28-8c50274d1cca/Banner-web-\u0026amp;-Landing 2.png","Link":"https://dangky.vhu.edu.vn/tuyen-sinh","Order":7,"DataId":"85b09204-b607-4e76-9f28-8c50274d1cca"},{"Id":"e872c497-55df-459a-beb7-407e6664c344","Title":"","Url":"Resources/imagesPortlet/85b09204-b607-4e76-9f28-8c50274d1cca/DHTX-(1).png","Link":"https://dangky.vhu.edu.vn/tuyen-sinh","Order":6,"DataId":"85b09204-b607-4e76-9f28-8c50274d1cca"},{"Id":"8040ff03-4172-464e-91fd-3a23658199f5","Title":"","Url":"Resources/imagesPortlet/85b09204-b607-4e76-9f28-8c50274d1cca/T7CN-TB-nhan-ho-so 1.png","Link":"https://vhu.edu.vn/vi/he-thong-dao-tao/tuyen-sinh-lien-ket","Order":5,"DataId":"85b09204-b607-4e76-9f28-8c50274d1cca"},{"Id":"45315190-ddd5-48ad-b531-63a42320fd68","Title":"","Url":"Resources/imagesPortlet/85b09204-b607-4e76-9f28-8c50274d1cca/TB LT - VB2 -TS_cover web TS.png","Link":"https://sdh.vhu.edu.vn","Order":4,"DataId":"85b09204-b607-4e76-9f28-8c50274d1cca"},{"Id":"1e0fbea5-8a5f-45e2-9ed3-5e1f3b51a1fc","Title":"","Url":"Resources/imagesPortlet/85b09204-b607-4e76-9f28-8c50274d1cca/TB LT - VB2 -TS_cover web VB2.png","Link":"https://dangky.vhu.edu.vn/tuyen-sinh","Order":3,"DataId":"85b09204-b607-4e76-9f28-8c50274d1cca"},{"Id":"d13c56f9-eb49-4453-ade6-b0c2cbce9dbc","Title":"","Url":"Resources/imagesPortlet/85b09204-b607-4e76-9f28-8c50274d1cca/TB LT - VB2 -TS_cover web LT.png","Link":"https://dangky.vhu.edu.vn/tuyen-sinh","Order":2,"DataId":"85b09204-b607-4e76-9f28-8c50274d1cca"},{"Id":"165abf85-7454-4bf5-bff6-a4b727ec84ca","Title":"","Url":"Resources/imagesPortlet/85b09204-b607-4e76-9f28-8c50274d1cca/TS THS-18.png","Link":"https://sdh.vhu.edu.vn","Order":1,"DataId":"85b09204-b607-4e76-9f28-8c50274d1cca"}]')).CreateSlider();
+    });
+</script>
+<div class="slider_outter">
+    <div class="slider1">
+        <div class="slider-wrapper theme-default">
+            <div id="ctl15_psc-portlet-85b09204-b607-4e76-9f28-8c50274d1cca_slider" class="nivoSlider">
+                <!-- ko foreach: $data -->
+                <a data-bind="attr: { href: Link }" target="_blank">
+                    <img data-bind="attr: { src: '/' + Url, title: Title }" /></a>
+                <!-- /ko -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+				</div>
+			</div>
+		</div>
+	</div><div id="psc-divPanelMid">
+		<div id="psc-divPanelCenter" style="width:100%; float:left;">
+			<div id="psc-divPanelCenter-Content" style="min-height: 30px;">
+				
+<script src="/Scripts/GetAppIdBySubDomain.js"></script>
+<style type="text/css">
+  
+  
+
+    .Default.reWrapper {
+        width: 100% !important;
+    }
+    .RadEditor table.reLayoutWrapper{
+        height:250px!important;
+    }
+    .Default.RadEditor .reContentCell{
+        height:250px!important;
+    }
+    .form-control, .reToolZone span{
+            font-size:13px;
+        }
+ .reContentCell iframe{
+     height:250px!important;
+ }
+   .column-gopy{
+        padding:5px 0px;
+    }
+   table{
+       border: solid 1px!important;
+   }
+table td{
+   border: 1px solid #000;
+    padding: 3px;
+}
+  .anhien, anhien0,.anhien1,.anhien2,.anhien3,.anhien4,.anhien5,.anhien6{
+        padding: 5px;
+        margin:5px 0px;
+    text-align: center;
+    background-color: #e5eecc;
+    border: solid 1px #c3c3c3;
+    font-weight: bold;
+    width:100%;
+    float:left;
+    }
+    .download {
+        height:20px;
+        width:100%;
+    float:left;
+    }
+    .download img{float:left;
+                  padding: 0px 5px 0px 0px;
+                  width:20px;
+    }
+    .icon-down{
+        float:right;
+        margin:0px 10px;
+    }
+    .icon-in{
+        float:right;
+    }
+
+
+     @media (max-width: 768px) {
+       
+       
+        /* màn hình dưới 768*/
+        .column-1,
+        .column-2,
+        .column-3,
+        .column-4 {
+            padding-left: 0px!important;
+        }
+         .name{
+        padding:0px;
+    }
+    }
+      .wrapper li{
+         list-style:inherit!important
+     }
+         table tr td:first-child >span:lang(NL) {
+   font-size:12px!important;
+}
+         ._5lm5 _2pi3 _3-8y{
+             display:none!important;
+         }
+</style>
+
+<script type="text/javascript">
+   
+    var dialogMethod;
+    function CallWebMethodSuccess(results, context, methodName) {
+        switch (methodName) {
+            case "AllowWatchArticle":
+                {
+                    CheckUserWatchCallback(results, context, methodName);
+                }
+                break;
+        }
+    }
+
+    function CallWebMethodFailed(results, context, methodName) {
+        alert(results._message);
+    }
+    // check user login
+    function getQuerystringNameValue(name) {
+        // For example... passing a name parameter of "name1" will return a value of "100", etc.
+        // page.htm?name1=100 or page.htm/name1/100
+        var articleId;
+        var winURL = window.location.href;
+        var index = winURL.indexOf(name);
+        if (index > -1) {
+            winURL = winURL.substr(index, winURL.length);
+            var arr = winURL.indexOf("/") > -1 ? winURL.split("/") : winURL.split("=");;
+            articleId = arr[1];
+        }
+        return articleId;
+    }
+    function CheckUserWatchArticle() {
+        PSCPortal.Services.CMS.AllowWatchArticle("866dcbdc-4219-4e21-bdeb-33ffceee23e0", CallWebMethodSuccess);
+    }
+    var dialogMethod;
+    function CheckUserWatchCallback(results, context, methodName) {
+        if (!results) {
+            dialogMethod = "CheckUserWatchArticle";
+            var oWnd = $find("ctl15_ctl03_rwUserLogin");
+            oWnd.setSize(380, 180);
+            oWnd.setUrl("/Modules/CMS/UserLogin.aspx");
+            oWnd.set_title("Login");
+            oWnd.show();
+        }
+    }
+    function RadCheckUserWatchClose(sender, args) {
+        switch (dialogMethod) {
+            case "CheckUserWatchArticle":
+                {
+                    PSCPortal.Services.CMS.CheckUserWatchArticle(CallCheckUserWatchWebMethodSuccess);
+                }
+                break;
+        }
+    }
+    function CallCheckUserWatchWebMethodSuccess(results, context, methodName) {
+        if (!results)
+          {
+          
+              if(history.length === 1){
+                window.close();
+            } else {
+                window.history.back();
+            }
+          }
+    }
+    //end check user login
+
+    window.onload = function (e) {
+        pscjq('.form-inline iframe').load(function () {
+            pscjq('.form-inline iframe').contents().find("._5lm5 _2pi3 _3-8y").css("float", "right");
+        });
+
+        pscjq('.form-inline iframe').load(function () {
+            var css = '<style type="text/css">.container{background:blue};</style>';
+            pscjq('.form-inline iframe').contents().find("head").append(css);
+        });
+    CheckUserWatchArticle();
+}
+ 
+
+</script>
+<script type="text/javascript">
+    function OnSendArticle() {
+        var result = window.showModalDialog("/Modules/CMS/SendArticle.aspx", document.URL, "dialogHeight: 320px; dialogWidth: 450px;");
+    }
+    function OnBack() {
+        window.history.back();
+    }
+    function OnGoToHead() {
+        window.moveTo(0, 0);
+    }
+
+    function PrintDiv() {
+        var divToPrintTieuDe = document.getElementById('print-tieude');
+        var divToPrintChiTiet = document.getElementById('print-chitiet');
+        var popupWin = window.open("", "_blank", "width=700,height=800");
+        popupWin.document.writeln('' + divToPrintTieuDe.innerHTML + divToPrintChiTiet.innerHTML + '');
+        popupWin.document.close();
+        popupWin.focus();
+        popupWin.print();
+    }
+
+</script>
+<script type="text/javascript">
+
+    pscjq(document).ready(function () {
+
+        pscjq(".slidingDiv").show();
+        pscjq(".show_hide").show();
+
+        pscjq('.show_hide').click(function () {
+            pscjq(".slidingDiv").slideToggle();
+        });
+        pscjq('.noidungxem').show(); // khi không xem 
+        pscjq('.anhien').show();     // thì đóng tab đó
+        pscjq('.anhien').click(function () {
+            pscjq(".noidungxem").slideToggle();
+        });
+        pscjq("#homepage-url").attr("href", "http://" + location.hostname);
+
+        var a= ('cd7bb1ce-3861-484e-bbba-bcf5d980a0b4')
+        if(a=='235abc79-aad7-4e16-b249-7a9d4616b6c4')
+        {
+            pscjq(".home ul li:nth-child(3) a").attr("href", "/module/thong-bao/tin-tuc-hoat-dong");
+        }
+    });  
+  
+</script>
+
+
+<!-- <script src="https://apis.google.com/js/platform.js" async defer> -->
+  <!-- {lang: 'vi'} -->
+<!-- </script> -->
+<!-- <div id="fb-root"></div> -->
+<!-- <script> -->
+    <!-- var appid = AppID(); -->
+    <!-- window.fbAsyncInit = function () { -->
+        <!-- FB.init({ -->
+            <!-- appId: "'" + appid + "'", status: true, cookie: true, -->
+            <!-- xfbml: true -->
+        <!-- }); -->
+    <!-- }; -->
+    <!-- (function (d, s, id) { -->
+        <!-- var js, fjs = d.getElementsByTagName(s)[0]; -->
+        <!-- if (d.getElementById(id)) return; -->
+        <!-- js = d.createElement(s); js.id = id; -->
+        <!-- js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.8&appId=" + appid + ""; -->
+        <!-- fjs.parentNode.insertBefore(js, fjs); -->
+    <!-- }(document, 'script', 'facebook-jssdk')); -->
+
+<!-- </script> -->
+<script src="https://apis.google.com/js/platform.js" async defer>
+  {lang: 'vi'}
+</script>
+<div id="fb-root"></div>
+<script>(function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.10&appId=1256696597782534";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div class="chitiet container">
+<div class="chitiet width-common">
+			<div class="header width-common">
+				<div class="title col-sm-8">
+					<h1>Happy Young House nhà trọ hiện đại dành cho sinh viên Văn Hiến</h1>
+				</div>
+				<div class="link col-sm-4">
+					<ul>
+						<li><a id="homepage-url" href="#">Trang Chủ<span class="fa fa-angle-right" aria-hidden="true"></span></a></li>
+						<li><a href="/vi/tin-tuc-hoat-dong">Tin tức - Hoạt động</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- ./header -->
+			<div class="line width-common">
+				<img src="/Resources/ImagesPortal/HomePage/imgs/line-nhan-dien.png" alt="line">
+			</div>
+			
+			<div class="ngaydang width-common">
+				<div class="ngaydang-baiviet">
+					<span class="fa fa-calendar" aria-hidden="true"></span>
+					<!-- <span class="text-uppercase">26 tháng 07 năm 2023</span> -->
+				    <span class="text-uppercase">26 tháng 07 năm 2023</span>
+
+				</div>
+				<div class="tien-ich">
+					<ul>
+						<li> <a href="javascript:void()" onclick="print()" class="text-uppercase"><span class="fa fa-print" aria-hidden="true"></span>in bài viết</a></li>
+						<li> <a href="javascript:void()" onclick="sendpdf()" class="text-uppercase"><span class="fa fa-file-pdf-o" aria-hidden="true"></span>xuất pdf</a></li>
+						<li data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://vhu.edu.vn//vi/tin-tuc-hoat-dong/happy-young-house-nha-tro-hien-dai-danh-cho-sinh-vien-van-hien&amp;src=sdkpreparse"><span class="fa fa-facebook"> Chia sẻ</span></a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- ./ngaydang -->
+			
+			<div class="bai-viet width-common">
+				<div class="noidung-baiviet col-sm-8">
+					<div class="wrapper">
+						<div style="text-align: justify;"><span style="font-size: 14px; font-family: Arial; color: #000000;">Phụ huynh v&agrave; th&iacute; sinh lu&ocirc;n lo lắng về việc t&igrave;m nh&agrave; trọ an to&agrave;n, thoải m&aacute;i khi l&ecirc;n th&agrave;nh phố học tập.&nbsp;&nbsp;</span></div>
+<div style="text-align: justify;"><span style="font-size: 14px; font-family: Arial; color: #000000;">VHUers mong muốn ở một nơi c&oacute; kh&ocirc;ng gian sống hiện đại, đủ tiện nghi, thuận tiện di chuyển giữa c&aacute;c cơ sở học tập của VHU.</span></div>
+<div style="text-align: justify;"><span style="font-size: 14px; font-family: Arial; color: #000000;">Giải tỏa nỗi lo lắng của phụ huynh v&agrave; đ&aacute;p ứng m&ocirc;i trường sống, học tập tốt nhất cho VHUers v&agrave; t&acirc;n sinh vi&ecirc;n, gi&uacute;p phụ huynh y&ecirc;n t&acirc;m khi con m&igrave;nh sống tự lập tại th&agrave;nh phố. Trường ĐH Văn Hiến v&agrave; myU s&aacute;ng tạo m&ocirc; h&igrave;nh nh&agrave; trọ hiện đại &ldquo;Co-living Space, Happy Young House&rdquo; tiện &iacute;ch, thoải m&aacute;i d&agrave;nh cho sinh vi&ecirc;n Văn Hiến.</span></div>
+<div style="text-align: justify;"><span style="font-size: 14px; font-family: Arial; color: #000000;"><strong>HAPPY YOUNG HOUSE C&Oacute; G&Igrave; ĐẶC BIỆT?</strong></span></div>
+<div style="text-align: justify;"><span style="font-size: 14px; font-family: Arial; color: #000000;"><strong><span style="color: #0070c0;">1. An to&agrave;n l&agrave; số 1</span></strong>: Hệ thống Happy Young House được biết đến l&agrave; một m&ocirc;i trường sống an to&agrave;n d&agrave;nh cho sinh vi&ecirc;n v&agrave; bạn trẻ v&igrave; quy tr&igrave;nh tuyển chọn th&agrave;nh vi&ecirc;n kỹ c&agrave;ng, ti&ecirc;u chuẩn về hệ thống kh&oacute;a cửa v&acirc;n tay, camera an ninh chặc chẽ. Bạn kh&ocirc;ng cần phải lo lắng về vấn đề an ninh.</span></div>
+<div style="text-align: justify;"><span style="font-size: 14px; font-family: Arial; color: #000000;"><strong><span style="color: #0070c0;">2. Được quản l&yacute; chuy&ecirc;n nghiệp</span></strong>: Happy Young House được quản l&yacute; bởi nh&acirc;n sự v&agrave; quy tr&igrave;nh chuy&ecirc;n nghiệp. Tất cả th&agrave;nh vi&ecirc;n sống ở Happy Young House sẽ c&oacute; k&ecirc;nh kết nối với nhau để kịp thời xử l&yacute; c&aacute;c sự cố khi c&oacute; ph&aacute;t sinh. Phụ huynh cũng c&oacute; thể kết nối khi cần.&nbsp;</span></div>
+<div style="text-align: justify;"><span style="font-size: 14px; font-family: Arial; color: #000000;"><strong><span style="color: #0070c0;">3. Tiết kiệm chi ph&iacute;</span></strong>: bạn sẽ được trải nghiệm kh&ocirc;ng gian sống &ldquo;Co-living Space&rdquo; theo xu hướng của những c&ocirc;ng d&acirc;n trẻ to&agrave;n cầu, với đầy đủ c&aacute;c tiện &iacute;ch nhưng chi ph&iacute; chỉ từ 2,000,000vnđ &ndash; 2,500,000 vnđ/ th&aacute;ng.</span></div>
+<div style="text-align: justify;"><span style="font-size: 14px; font-family: Arial; color: #000000;"><strong><span style="color: #0070c0;">4. Trang thiết bị hiện đại</span></strong>: được trang bị đầy đủ c&aacute;c trang thiết bị cần thiết: wifi, tủ lạnh, m&aacute;y giặt, dịch vụ điện nước&hellip; tạo m&ocirc;i trường sống tiện &iacute;ch cho c&aacute;c th&agrave;nh vi&ecirc;n.&nbsp;</span></div>
+<div style="text-align: justify;"><span style="font-size: 14px; font-family: Arial; color: #000000;"><strong><span style="color: #0070c0;">5. Kh&ocirc;ng gian sống gi&agrave;u sự kết nối</span></strong>: B&ecirc;n cạnh kh&ocirc;ng gian ri&ecirc;ng l&agrave; ph&ograve;ng ngủ, mỗi chi nh&aacute;nh đều c&oacute; kh&ocirc;ng gian chung như ph&ograve;ng đọc s&aacute;ch, l&agrave;m việc v&agrave; họp nh&oacute;m, ph&ograve;ng bếp&hellip; gi&uacute;p kết nối c&aacute;c th&agrave;nh vi&ecirc;n, ph&aacute;t triển cộng đồng.&nbsp;</span></div>
+<div style="text-align: justify;"><span style="font-size: 14px; font-family: Arial; color: #000000;"><strong><span style="color: #0070c0;">6. Vị tr&iacute; địa l&yacute; thuận tiện di chuyển</span></strong>: Happy Young House c&oacute; nhiều chi nh&aacute;nh tại c&aacute;c quận gần cơ sở học tập của sinh vi&ecirc;n Văn Hiến, v&igrave; vậy việc di chuyển giữa c&aacute;c cơ sở thuận tiện.&nbsp;</span></div>
+<div style="text-align: justify;"><span style="font-size: 14px; font-family: Arial; color: #000000;"><strong><span style="color: #0070c0;">7. C&aacute;c hoạt động kết nối cộng đồng v&agrave; ph&aacute;t triển gi&aacute; trị cốt l&otilde;i trong bạn trẻ</span></strong>: Happy Young House thường xuy&ecirc;n định kỳ h&agrave;ng th&aacute;ng tổ chức c&aacute;c hoạt động x&atilde; hội, đ&agrave;o tạo, hướng nghiệp, workshop,&hellip; nhằm gi&uacute;p c&aacute;c th&agrave;nh vi&ecirc;n trong cộng đồng c&oacute; th&ecirc;m cơ hội để r&egrave;n luyện v&agrave; ph&aacute;t triển trong ch&iacute;nh m&ocirc;i trường sống của Happy Young House.</span></div>
+<div style="text-align: justify;"><span style="font-size: 14px; font-family: Arial; color: #000000;"><strong><span style="color: #0070c0;">8. Happy Young House l&agrave; 1 thương hiệu uy t&iacute;n h&agrave;ng đầu đ&atilde; phục vụ h&agrave;ng ng&agrave;n bạn trẻ trong gần 10 năm qua v&agrave; được sự lan tỏa mạnh mẽ của c&aacute;c B&aacute;o Đ&agrave;i từ trung ương đến địa phương như</span></strong>: VTV, HTV, SCTV, Truyền H&igrave;nh Quốc Hội, B&aacute;o Thanh Ni&ecirc;n, B&aacute;o Tuổi Trẻ, B&aacute;o S&agrave;i G&ograve;n Giải Ph&oacute;ng,...&nbsp; &nbsp;</span></div>
+<div style="text-align: justify;"><span style="font-size: 14px; font-family: Arial; color: #000000;">Chỉ cần bạn l&agrave; sinh vi&ecirc;n Văn Hiến hoặc l&agrave; th&iacute; sinh đăng k&yacute; sớm tham gia th&agrave;nh vi&ecirc;n myU sẽ được ưu ti&ecirc;n được ở trọ tại Happy Young House chi ph&iacute; tốt nhất.&nbsp;&nbsp;</span></div>
+<div style="text-align: justify;"><span style="font-size: 14px; font-family: Arial; color: #000000;">Với những tiện &iacute;ch của Happy Young House, VHUers ho&agrave;n to&agrave;n y&ecirc;n t&acirc;m học tập trong một kh&ocirc;ng gian sống hiện đại.&nbsp;</span></div>
+<div style="text-align: justify;"><span style="font-size: 14px; font-family: Arial; color: #000000;">T&igrave;m hiểu th&ecirc;m th&ocirc;ng tin về Happy Young House: Ng&ocirc;i Nh&agrave; Chung T&iacute;ch Cực V&agrave; Tử Tế D&agrave;nh Cho Bạn Trẻ (<span style="color: #00b0f0;"><em><a href="http://happyyounghouse.com">happyyounghouse.com</a></em></span>)</span></div>
+<div style="text-align: justify;"><span style="font-size: 14px; font-family: Arial; color: #000000;">⦁ Tham gia myU ngay tại đ&acirc;y: &nbsp;<em><span style="color: #00b0f0;"><a href="https://myu.vhu.edu.vn/">https://myu.vhu.edu.vn/</a></span></em></span></div>
+<div style="text-align: justify;"><span style="font-size: 14px; font-family: Arial; color: #000000;">Để được thầy c&ocirc; v&agrave; anh chị sinh vi&ecirc;n Văn Hiến tư vấn trực tiếp th&igrave; h&atilde;y tham gia nh&oacute;m VHU &ndash; Tư vấn tuyển sinh 2023 ngay nh&eacute; <span style="color: #00b0f0;"><em><a href="http://https://www.facebook.com/groups/753648249517193">https://www.facebook.com/groups/753648249517193</a></em></span></span></div>
+<div style="text-align: justify;"><span style="font-size: 14px; font-family: Arial; color: #000000;">----------------------------------&nbsp;</span></div>
+<div style="text-align: justify;"><span style="font-size: 14px; font-family: Arial; color: #000000;"><strong>TRƯỜNG ĐẠI HỌC VĂN HIẾN - TH&Agrave;NH NH&Acirc;N TRƯỚC TH&Agrave;NH DANH&nbsp;</strong></span></div>
+<div style="text-align: justify;"><span style="font-size: 14px; font-family: Arial; color: #000000;">🌐 Website: <em><span style="color: #00b0f0;"><a href="http://www.vhu.edu.vn ">www.vhu.edu.vn&nbsp;</a></span></em></span></div>
+<div style="text-align: justify;"><span style="font-size: 14px; font-family: Arial; color: #000000;">☎ Hotline: 18001568&nbsp;</span></div>
+<div style="text-align: justify;"><span style="font-size: 14px; font-family: Arial; color: #000000;">📎 T&igrave;m hiểu th&ocirc;ng tin tuyển sinh: <span style="color: #00b0f0;"><em><a href="https://ts.vhu.edu.vn ">https://ts.vhu.edu.vn&nbsp;</a></em></span></span></div>
+<div style="text-align: justify;"><span style="font-size: 14px; font-family: Arial; color: #000000;">💻 Đăng k&yacute; x&eacute;t tuyển ngay: <em><a href="https://dangky.vhu.edu.vn/tuyensinh ">https://dangky.vhu.edu.vn/tuyensinh&nbsp;</a></em></span></div>
+<div style="text-align: justify;"><span style="font-size: 14px; font-family: Arial; color: #000000;">♻️ Nh&oacute;m VHU - Tư vấn tuyển sinh 2023: <em><a href="https://www.facebook.com/groups/753648249517193 ">https://www.facebook.com/groups/753648249517193&nbsp;</a></em></span></div>
+<div style="text-align: justify;"><span style="font-size: 14px; font-family: Arial; color: #000000;"><strong>#VanHienUniversity #DaihocVanHien #VHU #COCO #VHUers #Xettuyenhocba2023 #myU</strong></span></div>
+<p style="text-align: center;"><span style="font-size: 14px; font-family: Arial; color: #000000;"><img alt="" src="/Resources/Images/SubDomain/HomePage/2023/trangchu/Happy%20Young%20House/Happy%20Young%20House%2001.jpg" style="width: 290px; height: 290px;" /><br />
+</span></p>
+<p style="text-align: center;"><span style="font-size: 14px; font-family: Arial; color: #000000;"><img alt="" src="/Resources/Images/SubDomain/HomePage/2023/trangchu/Happy%20Young%20House/Happy%20Young%20House%2002.jpg" style="width: 430px; height: 430px;" /><br />
+</span></p>
+<p style="text-align: center;"><span style="font-size: 14px; font-family: Arial; color: #000000;"><img alt="" src="/Resources/Images/SubDomain/HomePage/2023/trangchu/Happy%20Young%20House/Happy%20Young%20House%2003.jpg" style="width: 430px; height: 430px;" /><br />
+</span></p>
+<p style="text-align: center;"><span style="font-size: 14px; font-family: Arial; color: #000000;"><img alt="" src="/Resources/Images/SubDomain/HomePage/2023/trangchu/Happy%20Young%20House/Happy%20Young%20House%2004.jpg" style="width: 430px; height: 430px;" /><br />
+</span></p>
+<p style="text-align: center;"><span style="font-size: 14px; font-family: Arial; color: #000000;"><img alt="" src="/Resources/Images/SubDomain/HomePage/2023/trangchu/Happy%20Young%20House/Happy%20Young%20House%2005.jpg" style="width: 430px; height: 430px;" /><br />
+</span></p>
+<p style="text-align: center;"><span style="font-size: 14px; font-family: Arial; color: #000000;"><img alt="" src="/Resources/Images/SubDomain/HomePage/2023/trangchu/Happy%20Young%20House/Happy%20Young%20House%2006.jpg" style="width: 430px; height: 430px;" /><br />
+</span></p>
+<p style="text-align: center;"><span style="font-size: 14px; font-family: Arial; color: #000000;"><img alt="" src="/Resources/Images/SubDomain/HomePage/2023/trangchu/Happy%20Young%20House/Happy%20Young%20House%2007.jpg" style="width: 430px; height: 430px;" /><br />
+</span></p>
+                        
+                        
+					</div>
+                        <div id="ctl15_ctl03_ValidationSummary1" style="color:Red;display:none;">
+
+				</div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12" style="display:none">
+                        
+                    </div>
+                </div>
+                <div class="gopy" style="display: none;">
+                    <div style="float: left; padding-bottom: 5px; width: 100%;">
+                        <div style="background-color: #7a1214; border-radius: 6px; no-repeat; width: 76px; height: 24px; float: left;">
+                            <div style="font-weight: bold; font: 13px Verdana; color: #fff; padding-top: 3px; text-align: center"
+                                class="show_hide">
+                                Góp ý
+                            </div>
+                        </div>
+                    </div>
+                    <div style="font-family: Verdana; font-size: small; color: #FF0000; float: left; width: 100%;">
+                        
+                    </div>
+
+                    <div class="slidingDiv" style="float: left; display: block;width:100%; padding-top: 20px; border-top: 1px solid #c2c2c2">
+                     
+                   <form class="form-inline">
+                      <div class="row">
+                          <div class="fb-comments" data-width="100%" data-href="https://vhu.edu.vn//vi/tin-tuc-hoat-dong/happy-young-house-nha-tro-hien-dai-danh-cho-sinh-vien-van-hien" data-numposts="5"></div>
+                      </div>               
+                </form>
+                            
+                     </div>
+                </div>
+
+				</div>
+				<!-- ./noidung-baiviet -->
+				<div class="tin-lien-quan col-sm-4">
+
+                     <div id="ctl15_ctl03_pnCactinkhac">
+					
+                   <div class="text-head width-common">Các tin liên quan</div>
+                    <div class="box-list width-common">
+                            <ul>
+                                
+                                        <article>							
+							            <span class="out-line">◦</span>
+							            <a class="title" href="/vi/tin-tuc-hoat-dong/truong-dai-hoc-danh-30-ty-de-cap-hoc-bong-cho-sinh-vien-va-tan-sinh-vien" title="Trường đại học dành 30 tỷ để cấp học bổng cho sinh viên và tân sinh viên">Trường đại học dành 30 tỷ để cấp học bổng cho sinh viên và tân sinh viên</a>
+							            <span class="date">26 tháng 07 năm 2023</span>
+						            </article>                                       
+                                    
+                                        <article>							
+							            <span class="out-line">◦</span>
+							            <a class="title" href="/vi/tin-tuc-hoat-dong/hon-2-000-sinh-vien-chay-het-minh-cung-dan-ca-si-dinh-dam-tai-vi-vu-cung-vhu" title="Hơn 2.000 sinh viên "cháy" hết mình cùng dàn ca sĩ đình đám tại Vi vu cùng VHU">Hơn 2.000 sinh viên "cháy" hết mình cùng dàn ca sĩ đình đám tại Vi vu cùng VHU</a>
+							            <span class="date">24 tháng 07 năm 2023</span>
+						            </article>                                       
+                                    
+                                        <article>							
+							            <span class="out-line">◦</span>
+							            <a class="title" href="/vi/tin-tuc-hoat-dong/son-xe-om-day-kem-tieng-anh" title="'Sơn Xe Ôm' dạy kèm tiếng Anh">'Sơn Xe Ôm' dạy kèm tiếng Anh</a>
+							            <span class="date">24 tháng 07 năm 2023</span>
+						            </article>                                       
+                                    
+                            </ul>
+                       
+                    </div>
+                
+				</div>			
+					<div class="quang-cao width-common">
+						
+						<!-- <div class="item"> -->
+							<!-- <a href="http://tuyensinh.vhu.edu.vn/vi/tai-sao-chon-vhu/9-ly-do-de-tro-thanh-sinh-vien-van-hien-2953"><img src="/Resources/ImagesPortal/HomePage/imgs/quang_cao.jpg" alt="quang cao"></a> -->
+						<!-- </div> -->
+					</div>
+				</div>
+				<!-- ./tin-lien-quan -->
+			</div>
+
+			<!-- ./bai-viet -->
+		</div>
+</div>
+
+
+
+
+
+
+
+<div id="ctl15_ctl03_rwUserLogin" style="display:none;">
+					<div id="ctl15_ctl03_rwUserLogin_C" style="display:none;">
+
+					</div><input id="ctl15_ctl03_rwUserLogin_ClientState" name="ctl15_ctl03_rwUserLogin_ClientState" type="hidden" />
+				</div>
+
+<style type="text/css">
+    .TelerikModalOverlay {
+        filter: alpha(opacity=95) !important; /*for IE 5.5+*/
+        opacity: 1 !important; /*for FF 2x, Opera 9x*/
+        -moz-opacity: 1 !important; /*for FF 1x*/
+        background-color: #BE1E2D !important;
+    }
+</style>
+
+			</div>
+		</div><div id="psc-divPanelRight" style="width:100%; float:left;">
+			<div id="psc-divPanelRight-Content" style="min-height: 30px;">
+				<div id="psc-divPortlet-e1afb412-c744-4fde-8128-8a2b7be49c93" class="psc-divPortlet-Wrapper" style="width:100%; float:left;">
+					<div class="psc-divPortlet-Content">
+						
+
+<link href="/Components/CarouselSlider/CSS/owl.carousel.css" rel="stylesheet" />
+<link href="/Components/CarouselSlider/CSS/owl.theme.css" rel="stylesheet" />
+<script src="/Components/CarouselSlider/Scripts/owl.carousel.js"></script>
+<div id="lien-ket" class="width-common ">
+    <div class="NganhDaoTao">
+        <div class="backgroud-lienket">
+            <h1 class="topic col-sm-12" style="text-align: center;"><a href="#"><span style="font-size: 18px;">39 Ngành đào tạo đại học</span></a></h1>
+            <div class="tab-content">
+                <section id="trungtam" class="tab-pane active">
+                    <div class="width-common" id="owl-khoa1">
+                        
+                                <div class="hover-item ">
+                                    <div class="thumb">
+                                        <a href="">
+                                            <img class="img-responsive" src="/Resources/imagesPortlet/e1afb412-c744-4fde-8128-8a2b7be49c93/dao dien dien anh truyen hinh.png" alt="img" />
+                                        </a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="">
+                                        </a>
+                                    </div>
+                                </div>
+                            
+                                <div class="hover-item ">
+                                    <div class="thumb">
+                                        <a href="">
+                                            <img class="img-responsive" src="/Resources/imagesPortlet/e1afb412-c744-4fde-8128-8a2b7be49c93/nl39.png" alt="img" />
+                                        </a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="">
+                                        </a>
+                                    </div>
+                                </div>
+                            
+                                <div class="hover-item ">
+                                    <div class="thumb">
+                                        <a href="">
+                                            <img class="img-responsive" src="/Resources/imagesPortlet/e1afb412-c744-4fde-8128-8a2b7be49c93/qt38.png" alt="img" />
+                                        </a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="">
+                                        </a>
+                                    </div>
+                                </div>
+                            
+                                <div class="hover-item ">
+                                    <div class="thumb">
+                                        <a href="">
+                                            <img class="img-responsive" src="/Resources/imagesPortlet/e1afb412-c744-4fde-8128-8a2b7be49c93/th37.png" alt="img" />
+                                        </a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="">
+                                        </a>
+                                    </div>
+                                </div>
+                            
+                                <div class="hover-item ">
+                                    <div class="thumb">
+                                        <a href="">
+                                            <img class="img-responsive" src="/Resources/imagesPortlet/e1afb412-c744-4fde-8128-8a2b7be49c93/Kiem toan.png" alt="img" />
+                                        </a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="">
+                                        </a>
+                                    </div>
+                                </div>
+                            
+                                <div class="hover-item ">
+                                    <div class="thumb">
+                                        <a href="">
+                                            <img class="img-responsive" src="/Resources/imagesPortlet/e1afb412-c744-4fde-8128-8a2b7be49c93/35..png" alt="img" />
+                                        </a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="">
+                                        </a>
+                                    </div>
+                                </div>
+                            
+                                <div class="hover-item ">
+                                    <div class="thumb">
+                                        <a href="">
+                                            <img class="img-responsive" src="/Resources/imagesPortlet/e1afb412-c744-4fde-8128-8a2b7be49c93/34..png" alt="img" />
+                                        </a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="">
+                                        </a>
+                                    </div>
+                                </div>
+                            
+                                <div class="hover-item ">
+                                    <div class="thumb">
+                                        <a href="">
+                                            <img class="img-responsive" src="/Resources/imagesPortlet/e1afb412-c744-4fde-8128-8a2b7be49c93/33..png" alt="img" />
+                                        </a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="">
+                                        </a>
+                                    </div>
+                                </div>
+                            
+                                <div class="hover-item ">
+                                    <div class="thumb">
+                                        <a href="">
+                                            <img class="img-responsive" src="/Resources/imagesPortlet/e1afb412-c744-4fde-8128-8a2b7be49c93/31..png" alt="img" />
+                                        </a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="">
+                                        </a>
+                                    </div>
+                                </div>
+                            
+                                <div class="hover-item ">
+                                    <div class="thumb">
+                                        <a href="">
+                                            <img class="img-responsive" src="/Resources/imagesPortlet/e1afb412-c744-4fde-8128-8a2b7be49c93/30..png" alt="img" />
+                                        </a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="">
+                                        </a>
+                                    </div>
+                                </div>
+                            
+                                <div class="hover-item ">
+                                    <div class="thumb">
+                                        <a href="">
+                                            <img class="img-responsive" src="/Resources/imagesPortlet/e1afb412-c744-4fde-8128-8a2b7be49c93/29..png" alt="img" />
+                                        </a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="">
+                                        </a>
+                                    </div>
+                                </div>
+                            
+                                <div class="hover-item ">
+                                    <div class="thumb">
+                                        <a href="">
+                                            <img class="img-responsive" src="/Resources/imagesPortlet/e1afb412-c744-4fde-8128-8a2b7be49c93/28..png" alt="img" />
+                                        </a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="">
+                                        </a>
+                                    </div>
+                                </div>
+                            
+                                <div class="hover-item ">
+                                    <div class="thumb">
+                                        <a href="">
+                                            <img class="img-responsive" src="/Resources/imagesPortlet/e1afb412-c744-4fde-8128-8a2b7be49c93/27..png" alt="img" />
+                                        </a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="">
+                                        </a>
+                                    </div>
+                                </div>
+                            
+                                <div class="hover-item ">
+                                    <div class="thumb">
+                                        <a href="">
+                                            <img class="img-responsive" src="/Resources/imagesPortlet/e1afb412-c744-4fde-8128-8a2b7be49c93/26..png" alt="img" />
+                                        </a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="">
+                                        </a>
+                                    </div>
+                                </div>
+                            
+                                <div class="hover-item ">
+                                    <div class="thumb">
+                                        <a href="">
+                                            <img class="img-responsive" src="/Resources/imagesPortlet/e1afb412-c744-4fde-8128-8a2b7be49c93/25..png" alt="img" />
+                                        </a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="">
+                                        </a>
+                                    </div>
+                                </div>
+                            
+                                <div class="hover-item ">
+                                    <div class="thumb">
+                                        <a href="">
+                                            <img class="img-responsive" src="/Resources/imagesPortlet/e1afb412-c744-4fde-8128-8a2b7be49c93/24..png" alt="img" />
+                                        </a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="">
+                                        </a>
+                                    </div>
+                                </div>
+                            
+                                <div class="hover-item ">
+                                    <div class="thumb">
+                                        <a href="">
+                                            <img class="img-responsive" src="/Resources/imagesPortlet/e1afb412-c744-4fde-8128-8a2b7be49c93/23..png" alt="img" />
+                                        </a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="">
+                                        </a>
+                                    </div>
+                                </div>
+                            
+                                <div class="hover-item ">
+                                    <div class="thumb">
+                                        <a href="">
+                                            <img class="img-responsive" src="/Resources/imagesPortlet/e1afb412-c744-4fde-8128-8a2b7be49c93/22..png" alt="img" />
+                                        </a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="">
+                                        </a>
+                                    </div>
+                                </div>
+                            
+                                <div class="hover-item ">
+                                    <div class="thumb">
+                                        <a href="">
+                                            <img class="img-responsive" src="/Resources/imagesPortlet/e1afb412-c744-4fde-8128-8a2b7be49c93/21..png" alt="img" />
+                                        </a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="">
+                                        </a>
+                                    </div>
+                                </div>
+                            
+                                <div class="hover-item ">
+                                    <div class="thumb">
+                                        <a href="">
+                                            <img class="img-responsive" src="/Resources/imagesPortlet/e1afb412-c744-4fde-8128-8a2b7be49c93/20..png" alt="img" />
+                                        </a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="">
+                                        </a>
+                                    </div>
+                                </div>
+                            
+                                <div class="hover-item ">
+                                    <div class="thumb">
+                                        <a href="">
+                                            <img class="img-responsive" src="/Resources/imagesPortlet/e1afb412-c744-4fde-8128-8a2b7be49c93/19..png" alt="img" />
+                                        </a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="">
+                                        </a>
+                                    </div>
+                                </div>
+                            
+                                <div class="hover-item ">
+                                    <div class="thumb">
+                                        <a href="">
+                                            <img class="img-responsive" src="/Resources/imagesPortlet/e1afb412-c744-4fde-8128-8a2b7be49c93/18..png" alt="img" />
+                                        </a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="">
+                                        </a>
+                                    </div>
+                                </div>
+                            
+                                <div class="hover-item ">
+                                    <div class="thumb">
+                                        <a href="">
+                                            <img class="img-responsive" src="/Resources/imagesPortlet/e1afb412-c744-4fde-8128-8a2b7be49c93/17..png" alt="img" />
+                                        </a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="">
+                                        </a>
+                                    </div>
+                                </div>
+                            
+                                <div class="hover-item ">
+                                    <div class="thumb">
+                                        <a href="">
+                                            <img class="img-responsive" src="/Resources/imagesPortlet/e1afb412-c744-4fde-8128-8a2b7be49c93/16..png" alt="img" />
+                                        </a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="">
+                                        </a>
+                                    </div>
+                                </div>
+                            
+                                <div class="hover-item ">
+                                    <div class="thumb">
+                                        <a href="">
+                                            <img class="img-responsive" src="/Resources/imagesPortlet/e1afb412-c744-4fde-8128-8a2b7be49c93/15..png" alt="img" />
+                                        </a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="">
+                                        </a>
+                                    </div>
+                                </div>
+                            
+                                <div class="hover-item ">
+                                    <div class="thumb">
+                                        <a href="">
+                                            <img class="img-responsive" src="/Resources/imagesPortlet/e1afb412-c744-4fde-8128-8a2b7be49c93/14..png" alt="img" />
+                                        </a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="">
+                                        </a>
+                                    </div>
+                                </div>
+                            
+                                <div class="hover-item ">
+                                    <div class="thumb">
+                                        <a href="">
+                                            <img class="img-responsive" src="/Resources/imagesPortlet/e1afb412-c744-4fde-8128-8a2b7be49c93/13..png" alt="img" />
+                                        </a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="">
+                                        </a>
+                                    </div>
+                                </div>
+                            
+                                <div class="hover-item ">
+                                    <div class="thumb">
+                                        <a href="">
+                                            <img class="img-responsive" src="/Resources/imagesPortlet/e1afb412-c744-4fde-8128-8a2b7be49c93/12..png" alt="img" />
+                                        </a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="">
+                                        </a>
+                                    </div>
+                                </div>
+                            
+                                <div class="hover-item ">
+                                    <div class="thumb">
+                                        <a href="">
+                                            <img class="img-responsive" src="/Resources/imagesPortlet/e1afb412-c744-4fde-8128-8a2b7be49c93/11..png" alt="img" />
+                                        </a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="">
+                                        </a>
+                                    </div>
+                                </div>
+                            
+                                <div class="hover-item ">
+                                    <div class="thumb">
+                                        <a href="">
+                                            <img class="img-responsive" src="/Resources/imagesPortlet/e1afb412-c744-4fde-8128-8a2b7be49c93/10..png" alt="img" />
+                                        </a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="">
+                                        </a>
+                                    </div>
+                                </div>
+                            
+                                <div class="hover-item ">
+                                    <div class="thumb">
+                                        <a href="">
+                                            <img class="img-responsive" src="/Resources/imagesPortlet/e1afb412-c744-4fde-8128-8a2b7be49c93/9..png" alt="img" />
+                                        </a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="">
+                                        </a>
+                                    </div>
+                                </div>
+                            
+                                <div class="hover-item ">
+                                    <div class="thumb">
+                                        <a href="">
+                                            <img class="img-responsive" src="/Resources/imagesPortlet/e1afb412-c744-4fde-8128-8a2b7be49c93/8..png" alt="img" />
+                                        </a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="">
+                                        </a>
+                                    </div>
+                                </div>
+                            
+                                <div class="hover-item ">
+                                    <div class="thumb">
+                                        <a href="">
+                                            <img class="img-responsive" src="/Resources/imagesPortlet/e1afb412-c744-4fde-8128-8a2b7be49c93/7..png" alt="img" />
+                                        </a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="">
+                                        </a>
+                                    </div>
+                                </div>
+                            
+                                <div class="hover-item ">
+                                    <div class="thumb">
+                                        <a href="">
+                                            <img class="img-responsive" src="/Resources/imagesPortlet/e1afb412-c744-4fde-8128-8a2b7be49c93/6..png" alt="img" />
+                                        </a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="">
+                                        </a>
+                                    </div>
+                                </div>
+                            
+                                <div class="hover-item ">
+                                    <div class="thumb">
+                                        <a href="">
+                                            <img class="img-responsive" src="/Resources/imagesPortlet/e1afb412-c744-4fde-8128-8a2b7be49c93/5..png" alt="img" />
+                                        </a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="">
+                                        </a>
+                                    </div>
+                                </div>
+                            
+                                <div class="hover-item ">
+                                    <div class="thumb">
+                                        <a href="">
+                                            <img class="img-responsive" src="/Resources/imagesPortlet/e1afb412-c744-4fde-8128-8a2b7be49c93/4..png" alt="img" />
+                                        </a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="">
+                                        </a>
+                                    </div>
+                                </div>
+                            
+                                <div class="hover-item ">
+                                    <div class="thumb">
+                                        <a href="">
+                                            <img class="img-responsive" src="/Resources/imagesPortlet/e1afb412-c744-4fde-8128-8a2b7be49c93/3..png" alt="img" />
+                                        </a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="">
+                                        </a>
+                                    </div>
+                                </div>
+                            
+                                <div class="hover-item ">
+                                    <div class="thumb">
+                                        <a href="">
+                                            <img class="img-responsive" src="/Resources/imagesPortlet/e1afb412-c744-4fde-8128-8a2b7be49c93/2..png" alt="img" />
+                                        </a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="">
+                                        </a>
+                                    </div>
+                                </div>
+                            
+                                <div class="hover-item ">
+                                    <div class="thumb">
+                                        <a href="">
+                                            <img class="img-responsive" src="/Resources/imagesPortlet/e1afb412-c744-4fde-8128-8a2b7be49c93/1..png" alt="img" />
+                                        </a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="">
+                                        </a>
+                                    </div>
+                                </div>
+                            
+
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    pscjq(document).ready(function () {
+        pscjq("#owl-khoa1").owlCarousel({
+
+            autoPlay: 3000, //Set AutoPlay to 3 seconds
+            navigation: true,
+            navigationText: ["prev", "next"],
+            rewindNav: true,
+            scrollPerPage: false,
+            items: 5,
+            itemsDesktop: [1199, 3],
+            itemsDesktopSmall: [979, 3]
+
+        });
+
+    });
+</script>
+<style>
+    #owl-demo .item {
+    margin: 3px;
+    }
+    #owl-demo .item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    }
+</style>
+					</div>
+				</div><div id="psc-divPortlet-d4ed746a-e793-480e-8960-4c9ab998b2dd" class="psc-divPortlet-Wrapper" style=" width:100%; float:left;">
+					<div class="psc-divPortlet-Content">
+						<link href="/Components/CarouselSlider/CSS/owl.carousel.css" rel="stylesheet" />
+<link href="/Components/CarouselSlider/CSS/owl.theme.css" rel="stylesheet" />
+<script src="/Components/CarouselSlider/Scripts/owl.carousel.js"></script>
+<div id="lien-ket" class="width-common ">
+<div class="container">
+<div class="backgroud-lienket">
+<h1 class="topic col-sm-12"><a href="#"><span style="font-size: 18px;">LI&Ecirc;N KẾT</span></a></h1>
+<div class="block-link">
+<ul class="tabs">
+    <li class="tab-title active" id="tab-slick1"><a data-toggle="tab" href="#khoa">Khoa</a><span> //</span></li>
+    <li class="tab-title" id="tab-slick2"><a data-toggle="tab" href="#vien">Vi&ecirc;̣n - Trung T&acirc;m</a><span>// </span></li>
+    <li class="tab-title" id="tab-slick3"><a data-toggle="tab" href="#phong">Phòng Ban</a></li>
+</ul>
+</div>
+<div class="tab-content">
+<section id="vien" class="tab-pane active">
+<div class="width-common" id="owl-vien">
+<div class="hover-item ">
+<a href="https://csnh.vhu.edu.vn/">
+</a>
+&nbsp;<img alt="" src="/Resources/Images/SubDomain/homepage/2020/6-2020/logo-lien-ket/TT.%20Cham%20soc%20nguoi%20hoc%202023.jpg" />&nbsp;
+<div class="title"><a href="https://csnh.vhu.edu.vn/">
+Trung t&acirc;m Chăm s&oacute;c Người học
+</a></div>
+</div>
+<div class="hover-item ">
+<a href="https://dttts.vhu.edu.vn/">
+</a>
+<img alt="" src="/Resources/Images/TT.%20Dao%20tao%20the%20thao%20so%202023.jpg" />&nbsp;
+<div class="title"><a href="https://dttts.vhu.edu.vn/'">
+Trung t&acirc;m&nbsp;Đ&agrave;o tạo Thể thao số</a></div>
+</div>
+<div class="hover-item ">
+<a href="https://lib.vhu.edu.vn/">
+</a><img alt="" src="/Resources/Images/SubDomain/homepage/2020/6-2020/logo-lien-ket/TT.%20Trung%20tam%20Hoc%20lieu%202023.jpg" />
+<div class="title"><a href="https://lib.vhu.edu.vn/">
+Trung t&acirc;m Học liệu
+</a></div>
+</div>
+<div class="hover-item ">
+<a href="https://htdn.vhu.edu.vn/">
+</a>
+<a href="https://htdn.vhu.edu.vn/">
+<img alt="" src="/Resources/Images/SubDomain/homepage/2020/6-2020/logo-lien-ket/TT.%20Hop%20tac%20doanh%20nghiep%202023.jpg" /></a>
+<div class="title"><a href="https://htdn.vhu.edu.vn/">
+Trung t&acirc;m Hợp t&aacute;c Doanh nghiệp
+</a></div>
+</div>
+<div class="hover-item ">
+<a href="https://ttktdbcl.vhu.edu.vn/">
+</a><img alt="" src="/Resources/Images/SubDomain/homepage/2020/6-2020/logo-lien-ket/TT.%20Khao%20thi%20&amp;%20dam%20bao%20chat%20luong%202023.jpg" />
+<div class="title"><a href="https://ttktdbcl.vhu.edu.vn/">
+Trung t&acirc;m Khảo th&iacute; v&agrave; Đảm bảo chất lượng
+</a></div>
+</div>
+<div class="hover-item ">
+<a href="https://pvcdsv.vhu.edu.vn/">
+</a>
+<img alt="" src="/Resources/Images/TT.%20Phuc%20vu%20cong%20dong%20SV%202023.jpg" />&nbsp;
+<div class="title"><a href="https://pvcdsv.vhu.edu.vn/">
+Trung t&acirc;m Phục vụ Cộng đồng Sinh vi&ecirc;n</a></div>
+</div>
+<div class="hover-item ">
+<a href="https://tuyensinh.vhu.edu.vn/">
+</a>
+<img alt="" src="/Resources/Images/SubDomain/homepage/2020/6-2020/logo-lien-ket/Tu%20van%20tuyen%20sinh-2023.jpg" />&nbsp;
+<div class="title"><a href="https://tuyensinh.vhu.edu.vn/">
+Trung t&acirc;m Tư vấn Tuyển sinh</a></div>
+</div>
+<div class="hover-item ">
+<a href="https://tuyensinh.vhu.edu.vn/">
+</a>
+<img alt="" src="/Resources/Images/SubDomain/homepage/2020/6-2020/logo-lien-ket/truyen%20thong%202023.jpg" />&nbsp;
+<div class="title"><a href="#">Trung t&acirc;m Truyền th&ocirc;ng &amp; Tuyển sinh Trực tuyến</a></div>
+</div>
+<div class="hover-item ">
+<a href="https://sdhdtqt.vhu.edu.vn/">
+</a>
+<img alt="" src="/Resources/Images/SubDomain/homepage/2020/6-2020/logo-lien-ket/Vien%20SDH%20&amp;%20DTQT%202023.jpg" />&nbsp;
+<div class="title"><a href="https://sdhdtqt.vhu.edu.vn/">
+Viện Sau Đại học &amp; Đ&agrave;o tạo Quốc tế
+</a></div>
+</div>
+<div class="hover-item ">
+<a href="https://vapec.vhu.edu.vn/">
+</a>
+<a href="https://vapec.vhu.edu.vn/">
+<img alt="" src="/Resources/Images/SubDomain/homepage/2023/Lienket/APEC%202023.jpg" /></a>
+<div class="title"><a href="https://vapec.vhu.edu.vn/">
+Viện Chuyển giao Kết nối APEC</a></div>
+</div>
+<div class="hover-item ">
+<a href="https://viendoanhtri.vhu.edu.vn/">
+</a>
+<a href="https://viendoanhtri.vhu.edu.vn/">
+<img alt="" src="/Resources/Images/SubDomain/homepage/2020/6-2020/logo-lien-ket/vien-doanh-tri%202023.jpg" /></a>
+<div class="title"><a href="https://viendoanhtri.vhu.edu.vn/">
+Viện Doanh tr&iacute;</a></div>
+</div>
+<div class="hover-item ">
+<a href="https://ttth.vhu.edu.vn/">
+</a>
+<a href="https://ttth.vhu.edu.vn/">
+<img alt="" src="/Resources/Images/SubDomain/homepage/2020/6-2020/logo-lien-ket/tt-cong-nghe-thong-tin%202023.jpg" /></a>
+<div class="title"><a href="https://ttth.vhu.edu.vn/">
+Trung t&acirc;m Tin học
+</a></div>
+</div>
+<div class="hover-item ">
+<a href="https://litc.vhu.edu.vn/">
+</a>
+<img alt="" src="/Resources/Images/SubDomain/homepage/2020/6-2020/logo-lien-ket/Trung%20tam%20ngoai%20ngu%202023.jpg" />&nbsp;
+<div class="title"><a href="https://litc.vhu.edu.vn/">
+Trung t&acirc;m Ngoại ngữ
+</a></div>
+</div>
+</div>
+</section>
+<section id="khoa" class="tab-pane">
+<div class="width-common" id="owl-khoa">
+<div class="hover-item ">
+<a href="https://dl.vhu.edu.vn/">
+</a>
+<img alt="" src="/Resources/Images/SubDomain/homepage/2020/6-2020/logo-lien-ket/khoa%20du%20lich%202023.jpg" />&nbsp;
+<div class="title"><a href="https://dl.vhu.edu.vn/">
+Khoa Du lịch
+</a></div>
+</div>
+<div class="hover-item ">
+<a href="https://yd.vhu.edu.vn/">
+</a>
+<img alt="" src="/Resources/Images/SubDomain/homepage/2020/6-2020/logo-lien-ket/khoa%20y%20duoc%202023.jpg" />&nbsp;
+<div class="title"><a href="https://yd.vhu.edu.vn/">
+Khoa Y - Dược
+</a></div>
+</div>
+<div class="hover-item ">
+<a href="https://xhtt.vhu.edu.vn/">
+</a>
+<img alt="" src="/Resources/Images/SubDomain/homepage/2020/6-2020/logo-lien-ket/khoa%20xhtt%202023.jpg" />&nbsp;
+<div class="title"><a href="https://xhtt.vhu.edu.vn/">
+Khoa X&atilde; hội - Truyền th&ocirc;ng
+</a></div>
+</div>
+<div class="hover-item ">
+<a href="https://cntt.vhu.edu.vn/">
+</a><img alt="" src="/Resources/Images/SubDomain/homepage/2020/6-2020/logo-lien-ket/khoa%20cntt%202023.jpg" />
+<div class="title"><a href="https://cntt.vhu.edu.vn/">
+Khoa C&ocirc;ng nghệ Th&ocirc;ng tin
+</a></div>
+</div>
+<div class="hover-item ">
+<a href="https://ktcn.vhu.edu.vn/">
+</a>
+<img alt="" src="/Resources/Images/SubDomain/homepage/2020/6-2020/logo-lien-ket/khoa%20ky%20thuat%20cong%20nghe%202023.jpg" />&nbsp;
+<div class="title"><a href="https://ktcn.vhu.edu.vn/">
+Khoa Kỹ thuật - C&ocirc;ng nghệ
+</a></div>
+</div>
+<div class="hover-item ">
+<a href="https://nt.vhu.edu.vn/">
+</a>
+<img alt="" src="/Resources/Images/SubDomain/homepage/2020/6-2020/logo-lien-ket/khoa%20nghe%20thuat%202023.jpg" />&nbsp;
+<div class="title"><a href="https://nt.vhu.edu.vn/">
+Khoa Nghệ thuật
+</a></div>
+</div>
+<div class="hover-item ">
+<a href="https://ktqt.vhu.edu.vn/">
+</a>
+<img alt="" src="/Resources/Images/SubDomain/homepage/2020/6-2020/logo-lien-ket/khoa%20kinh%20te%20quan%20tri%202023.jpg" />&nbsp;
+<div class="title"><a href="https://ktqt.vhu.edu.vn/">
+Khoa Kinh tế - Quản trị
+</a></div>
+</div>
+<div class="hover-item ">
+<a href="https://ktqt.vhu.edu.vn/">
+</a><img alt="" src="/Resources/Images/SubDomain/homepage/2020/6-2020/logo-lien-ket/KTTC.jpg" />
+<div class="title"><a href="https://kttc.vhu.edu.vn/">
+Khoa Kế to&aacute;n - T&agrave;i ch&iacute;nh
+</a></div>
+</div>
+<div class="hover-item ">
+<a href="https://nn.vhu.edu.vn/">
+</a>
+<img alt="" src="/Resources/Images/SubDomain/homepage/2020/6-2020/logo-lien-ket/Khoa%20Ngoai%20ngu%202023.jpg" />
+<div class="title"><a href="https://nn.vhu.edu.vn/">
+Khoa Ngoại ngữ
+</a></div>
+</div>
+<div class="hover-item ">
+<a href="https://dph.vhu.edu.vn/">
+</a>
+<img alt="" src="/Resources/Images/SubDomain/homepage/2020/6-2020/logo-lien-ket/khoa-dph-2023.jpg" />
+<div class="title"><a href="https://dph.vhu.edu.vn/">
+Khoa Đ&ocirc;ng phương học
+</a></div>
+</div>
+</div>
+</section>
+<section id="phong" class="tab-pane">
+<div class="width-common" id="owl-phong">
+<div class="hover-item ">
+<a href="https://hcns.vhu.edu.vn/">
+<img alt="" src="/Resources/Images/Phong%20HCNS%202023.jpg" class="img-responsive" />
+</a>
+<div class="title"><a href="https://hcns.vhu.edu.vn/">
+Phòng H&agrave;nh ch&iacute;nh Nh&acirc;n sự</a></div>
+</div>
+<div class="hover-item ">
+<a href="https://qldt.vhu.edu.vn/">
+<img alt="" src="/Resources/Images/Quan%20ly%20dao%20tao%202023.jpg" />&nbsp;</a>
+<div class="title"><a href="https://qldt.vhu.edu.vn/">
+Phòng Quản l&yacute; đ&agrave;o tạo
+</a></div>
+</div>
+<div class="hover-item ">
+<a href="https://qlkhhtqt.vhu.edu.vn/">
+<img alt="" src="/Resources/Images/SubDomain/homepage/slider/Quan%20ly%20khoa%20hoc%20&amp;%20hop%20tac%20quoc%20te%202023.jpg" class="img-responsive" /></a>
+<div class="title"><a href="https://qlkhhtqt.vhu.edu.vn/">
+Ph&ograve;ng Quản l&yacute; Khoa học v&agrave; Hợp t&aacute;c Quốc tế
+</a></div>
+</div>
+<div class="hover-item ">
+<a href="#"><img alt="" src="/Resources/Images/Phong%20Quan%20tri%20co%20so%20vat%20chat%202023.jpg" class="img-responsive" /></a>
+<div class="title"><a href="#">Phòng Quản trị Cơ sở Vật chất</a></div>
+</div>
+<div class="hover-item ">
+<a href="https://tckt.vhu.edu.vn/">
+<img alt="" src="/Resources/Images/Phong%20TCKT%202023.jpg" class="img-responsive" />
+</a>
+<div class="title"><a href="https://tckt.vhu.edu.vn/">
+Phòng T&agrave;i ch&iacute;nh - Kế to&aacute;n
+</a></div>
+</div>
+<div class="hover-item ">
+<a href="http://dangbo.vhu.edu.vn/">
+<img alt="" src="/Resources/Images/SubDomain/homepage/N%C4%83m%202017/dang-bo-2023.jpg" class="img-responsive" />
+</a>
+<div class="title"><a href="https://dangbo.vhu.edu.vn/">
+Đảng Bộ</a></div>
+</div>
+<div class="hover-item ">
+<a href="https://tckh.vhu.edu.vn/"><img alt="" src="/Resources/Images/SubDomain/homepage/slider/Tap%20chi%20khoa%20hoc%202023.jpg" class="img-responsive" /></a>
+<div class="title"><a href="https://tckh.vhu.edu.vn/">
+Tạp ch&iacute; Khoa học
+</a></div>
+</div>
+<div class="hover-item ">
+<a href="http://doanhoi.vhu.edu.vn/">
+<img alt="" src="/Resources/Images/SubDomain/homepage/2020/6-2020/logo-lien-ket/Doan%20Hoi%202023.jpg" />&nbsp;</a>
+<div class="title"><a href="https://doanhoi.vhu.edu.vn/">
+Đo&agrave;n - Hội
+</a></div>
+</div>
+<div class="hover-item ">
+<a href="https://alumni.vhu.edu.vn/">
+</a>
+<img alt="" src="/Resources/Images/cuu%20sinh%20vien%202023.jpg" />&nbsp;
+<div class="title"><a href="https://alumni.vhu.edu.vn/">
+Hội Cựu Sinh vi&ecirc;n
+</a></div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</div>
+<script>
+    pscjq(document).ready(function() {
+	pscjq("#owl-khoa").owlCarousel({
+
+            autoPlay: 3000, //Set AutoPlay to 3 seconds
+            navigation: true,
+            navigationText: ["prev", "next"],
+            rewindNav: true,
+            scrollPerPage: false,
+            items: 4,
+            itemsDesktop: [1199, 3],
+            itemsDesktopSmall: [979, 3]
+
+        });
+        pscjq('#owl-vien').owlCarousel({
+
+            autoPlay: 3000, //Set AutoPlay to 3 seconds
+            navigation: true,
+            navigationText: ["prev", "next"],
+            rewindNav: true,
+            scrollPerPage: false,
+            items: 4,
+            itemsDesktop: [1199, 3],
+            itemsDesktopSmall: [979, 3]
+
+        });
+        
+        pscjq("#owl-phong").owlCarousel({
+
+            autoPlay: 3000, //Set AutoPlay to 3 seconds
+            navigation: true,
+            navigationText: ["prev", "next"],
+            rewindNav: true,
+            scrollPerPage: false,
+            items: 4,
+            itemsDesktop: [1199, 3],
+            itemsDesktopSmall: [979, 3]
+
+        });
+
+    });
+</script>
+<style>
+    .hover-item .title {width:200px;}
+    #owl-demo .item {
+    margin: 3px;
+    }
+    #owl-demo .item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    }
+    @media (min-width: 992px){
+    .container {
+    width: 970px;
+    }
+    }
+</style>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div><div id="psc-divPanelBottom" style="width:100%;float:left">
+		<div id="psc-divPanelBottom-Content" style="min-height: 30px;">
+			<div id="psc-divPortlet-9be3ca14-7456-4aa3-91cf-2184fb71e955" class="psc-divPortlet-Wrapper" style="width:100%;float:left">
+				<div class="psc-divPortlet-Content">
+					<section class="width-common" id="footer">
+<div class="line width-common">
+</div>
+<div class="f-logo width-common">
+<div><a href="https://vhu.hunghau.vn/tin-tuc-bao-chi/"><img alt="" src="/Resources/Images/SubDomain/HomePage/Logo/logo-footer.png" /></a>&nbsp;<span class="ban-quyen">Bản quyền &copy;2024 Trường Đại học Văn Hiến</span></div>
+</div>
+<div class="f-menu ">
+<div class="f-left">
+<ul>
+    <li><a href="https://vhu.edu.vn">trang chủ</a></li>
+    <li><a href="https://tuyensinh.vhu.edu.vn/">tuyển sinh</a></li>
+</ul>
+</div>
+<div class="f-right">
+<ul>
+    <li><a href="https://htdn.vhu.edu.vn/">tuyển dụng</a></li>
+    <li><a href="https://vhu.edu.vn/module/lien-he">li&ecirc;n hệ</a></li>
+</ul>
+</div>
+</div>
+<div class="line width-common"><span style="font-size: 14px; font-family: Arial;">&nbsp;</span></div>
+<div class="lien_he">
+<div class="row">
+<div class="col-sm-8">
+<div><span style="font-size: 14px; font-family: Arial; color: #000000;"><strong></strong>
+</span>
+<div style="text-align: justify;">
+<p style="text-align: justify;"><span style="font-size: 14px; font-family: Arial; color: #000000;"><strong></strong></span></p>
+<div style="text-align: justify;"><span style="font-size: 14px; font-family: Arial; color: #000000;"><strong></strong>
+</span>
+<div style="text-align: justify;"><span style="font-size: 14px; font-family: Arial; color: #000000;"><strong>Trụ sở ch&iacute;nh</strong>:</span></div>
+<div style="text-align: justify;"><span style="font-size: 14px; font-family: Arial; color: #000000;">HungHau House: 613 &Acirc;u Cơ, Phường Ph&uacute; Trung, Quận T&acirc;n Ph&uacute;, TP.HCM</span></div>
+<div style="text-align: justify;"><span style="font-size: 14px; font-family: Arial; color: #000000;"><strong>C&aacute;c cơ sở đ&agrave;o tạo</strong>:</span></div>
+<div style="text-align: justify;"><span style="font-size: 14px; font-family: Arial; color: #000000;">⦁ Harmony Campus: 624 &Acirc;u Cơ, Phường 10, Quận T&acirc;n B&igrave;nh, TP. HCM</span></div>
+<div style="text-align: justify;"><span style="font-size: 14px; font-family: Arial; color: #000000;">⦁ HungHau Campus: Đại lộ Nguyễn Văn Linh, Khu đ&ocirc; thị Nam Th&agrave;nh phố.</span>&nbsp;</div>
+<div style="text-align: justify;"><span style="font-size: 14px; font-family: Arial; color: #000000;">⦁ myU Campus: 665 - 667 - 669 Điện Bi&ecirc;n Phủ, Phường 1, Quận 3, TP. HCM</span></div>
+<div style="text-align: justify;"><span style="font-size: 14px; font-family: Arial; color: #000000;">⦁ Số 8 - 14 Nguyễn B&aacute; Tuyển, Phường 12, Quận T&acirc;n B&igrave;nh, TP. HCM</span></div>
+<div style="text-align: justify;"><span style="font-size: 14px; font-family: Arial; color: #000000;">⦁ 2A2 Quốc lộ 1A, Phường Thạnh Xu&acirc;n, Quận 12, TP.HCM<br />
+</span></div>
+</div>
+</div>
+</div>
+&nbsp;</div>
+<div class="col-sm-4"><span style="font-family: Arial; font-size: 18px; color: #000000;">
+</span>
+<p>Hotline:<strong>1800 1568</strong></p>
+<p>Email: <a href="mailto:info@vhu.edu.vn">info@vhu.edu.vn</a></p>
+<p>Website: <a href="https://vhu.edu.vn">www.vhu.edu.vn</a></p>
+<p><span style="color: #0070c0;"><strong><span style="font-size: 18px;">C&ugrave;ng hệ thống gi&aacute;o dục</span></strong></span></p>
+<p><span style="color: #0070c0;"><strong><span style="font-size: 20px;"><img alt="" src="/Resources/Images/SubDomain/HomePage/2024/HEA.png" style="width: 190px; height: 38px;" /></span></strong></span></p>
+<p><span style="color: #0070c0;"><strong><span style="font-size: 20px;"><img alt="" src="/Resources/Images/SubDomain/HomePage/2024/HEB.png" style="width: 190px; height: 38px;" /></span></strong></span></p>
+</div>
+</div>
+</div>
+</section>
+
+				</div>
+			</div><div id="psc-divPortlet-82a35f8b-a88e-4e76-b08a-d2ea82149d10" class="psc-divPortlet-Wrapper" style=" width:100%; float:left;">
+				<div class="psc-divPortlet-Content">
+					
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+
+
+
+        
+
+        <div id="articleModal" class="modal fade" role="form">
+            <div class="modal-dialog modal-lg vertical-align-center-modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Some text in the modal.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    
+<script type="text/javascript">
+//<![CDATA[
+var Page_ValidationSummaries =  new Array(document.getElementById("ctl15_ctl03_ValidationSummary1"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var ctl15_ctl03_ValidationSummary1 = document.all ? document.all["ctl15_ctl03_ValidationSummary1"] : document.getElementById("ctl15_ctl03_ValidationSummary1");
+ctl15_ctl03_ValidationSummary1.showmessagebox = "True";
+ctl15_ctl03_ValidationSummary1.showsummary = "False";
+ctl15_ctl03_ValidationSummary1.validationGroup = "Feedback";
+//]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+window.__TsmHiddenField = $get('RadScriptManager1_TSM');
+(function(id) {
+    var e = document.getElementById(id);
+    if (e) {
+        e.dispose = function() {
+            Array.remove(Page_ValidationSummaries, document.getElementById(id));
+        }
+        e = null;
+    }
+})('ctl15_ctl03_ValidationSummary1');
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadWindowManager, {"clientStateFieldID":"RadWindowManager1_ClientState","formID":"form1","iconUrl":"","minimizeIconUrl":"","name":"RadWindowManager1","skin":"Default","windowControls":"[]"}, null, null, $get("RadWindowManager1"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadWindow, {"_dockMode":false,"behaviors":36,"clientStateFieldID":"ctl15_ctl03_rwUserLogin_ClientState","formID":"form1","iconUrl":"","minimizeIconUrl":"","modal":true,"name":"rwUserLogin","skin":"Default","visibleStatusbar":false}, {"close":RadCheckUserWatchClose}, null, $get("ctl15_ctl03_rwUserLogin"));
+});
+//]]>
+</script>
+</form>
+	<div class="zalo-chat-widget" data-oaid="685414677491676498" data-welcome-message="Văn Hiến chào bạn!</br>		Nếu có thắc mắc về Tuyển sinh 2023, hãy đặt câu hỏi, bạn nhé!" data-autopopup="0" data-width="350" data-height="420">
+	</div> 
+	<script src="https://sp.zalo.me/plugins/sdk.js"></script>
+	<!-- Load Facebook SDK for JavaScript -->
+	<div id="fb-root"></div>
+	<style>
+	.fb_dialog_content  iframe{
+		bottom: 20%!important;
+		right: 15px;
+		left: unset!important;
+	}
+	.fb_iframe_widget iframe{
+		right: 6%;
+		bottom: 25%!important;
+		left: unset!important;
+	}
+	</style>
+	<script>        window.fbAsyncInit = function() {          FB.init({            xfbml            : true,            version          : 'v9.0'          });        };         (function(d, s, id) {        var js, fjs = d.getElementsByTagName(s)[0];        if (d.getElementById(id)) return;        js = d.createElement(s); js.id = id;        js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';        fjs.parentNode.insertBefore(js, fjs);      }(document, 'script', 'facebook-jssdk'));
+	</script>       
+	<!-- Your Chat Plugin code -->
+	<div class="fb-customerchat"        attribution="setup_tool"        page_id="118502361566576"  theme_color="#7646ff"  logged_in_greeting="Chào bạn, chúc một ngày tốt lành! Bạn cần hỗ trợ gì không?"  logged_out_greeting="Chào bạn, chúc một ngày tốt lành! Bạn cần hỗ trợ gì không?">
+</div>
+</body>
+</html>
