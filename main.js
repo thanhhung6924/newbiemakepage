@@ -197,3 +197,14 @@ $(".btn__reason").click(function () {
 
 ////////////////////////////////
 ///from
+//contact
+$(".contact__content").slideUp();
+$(".contact__info").click(function () {
+  $(this).next().slideToggle();
+  $(this).find(".contact__icon").text(function(index, text) {
+    return text === "+" ? "-" : "+";
+});
+
+
+
+})

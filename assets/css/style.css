@@ -11,18 +11,16 @@ html {
   overflow-scrolling: touch;
   scrollbar-width: 5px;
 }
-html::-webkit-scrollbar{
+html::-webkit-scrollbar {
   width: 10px;
-
 }
-html::-webkit-scrollbar-thumb{
-  background-color: rgb(39, 113, 187) ;
-  border-radius: 5px ;
+html::-webkit-scrollbar-thumb {
+  background-color: rgb(39, 113, 187);
+  border-radius: 5px;
 }
-html::-webkit-scrollbar-track{
+html::-webkit-scrollbar-track {
   background-color: white;
   height: 5%;
- 
 }
 body {
   font-size: 1.6rem;
@@ -866,26 +864,78 @@ a {
 }
 
 .contact {
-  background-color: oldlace;
+  background-color: rgb(233, 232, 232);
   padding: 40px;
 }
 .contact__body {
-  height: 60vh;
-  display: flex;
+  width: 60%;
+  padding-bottom: 50px;
+}
 
+.contact__info {
+  display: flex;
+  justify-content: space-between;
+}
+.contact__heading {
+  color: rgb(255, 255, 255);
+
+  font-weight: 400;
+  font-size: 2.4rem;
+  color: #000;
+}
+.heading__contact {
+  font-size: 4rem;
+  color: #000000;
+  font-weight: 800;
+}
+
+.contact__icon {
+  font-weight: 500;
+  font-size: 2.4rem;
+  transition: 0.2s;
+  color: #1925b0;
+}
+.icon__phone {
+  position: absolute;
+  bottom: 0;
+}
+.contact__content {
+  margin-top: 10px;
+}
+.contact__desc {
+  margin-top: 5px;
+  position: relative;
+  left: 30px;
+}
+.phone__contact {
+  display: flex;
+  gap: 10px;
   align-items: center;
-  justify-content: center;
-  font-size: 3.4rem;
-  width: 500px;
-  color: white;
-  background-color: #000000;
-  border: 1px solid rgb(0, 0, 0);
+  position: relative;
+}
+.contact__desc {
+  height: 20px;
+  display: flex;
+  align-items: center;
+}
+.contact__list {
+  margin-top: 50px;
+}
+.contact__item {
+  border-bottom: 0.5px solid black;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+}
+.desc__contact {
+  margin-top: 5px;
+  line-height: 20px;
+}
+.desc__contact strong {
+  font-weight: 900;
 }
 .footer__body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 70vh;
+  padding-top: 50px;
+ padding-bottom: 50px;
 }
 .it1 {
   background-color: rgb(27, 30, 44);
@@ -988,8 +1038,8 @@ a {
 }
 .form__right {
   width: 65%;
- padding: 60px 30px;
-  
+  padding: 60px 30px;
+
   height: 100%;
   background-color: #ffffff;
   border-radius: 15px;
@@ -1065,15 +1115,102 @@ input[type="radio"] {
   padding-bottom: 30px;
   border-bottom: 1px solid white;
 }
-.mation__heading{
-  color:rgba(39, 113, 187, 1);
+.mation__heading {
+  color: rgba(39, 113, 187, 1);
   margin-top: 30px;
 }
-.desc__hide{
+.desc__hide {
   margin-top: 20px;
 }
-.desc__mation{
+.col__top .contact__footer {
+  font-size: 1.8rem;
+
+  color: rgb(173, 173, 173);
+  opacity: 0.8;
+}
+.col__top {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.desc__footer {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: white;
+  opacity: 1;
+}
+.desc__mation {
   font-size: 1.6rem;
   color: white;
   margin-top: 10px;
+
+}
+.row__top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  padding-bottom: 20px;
+  border-bottom: 0.5px solid rgb(205, 205, 205);
+}
+.row__bottom {
+  padding-bottom: 20px;
+  padding-top: 20px;
+  display: grid;
+
+  grid-template-columns: repeat(5, 20%);border-bottom: 0.5px solid rgb(205, 205, 205);
+}
+.contact__footer {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.icon__footer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.link__footer {
+  text-decoration: none;
+  color: rgb(173, 173, 173);
+  opacity: 0.8;
+  font-size: 1.6rem;
+  
+}
+.link__footer:hover {
+  opacity: 1;
+  color: white;
+}
+.icon__footer--item {
+  font-size: 24px;
+  color: white;
+}
+.title__footer {
+  font-size: 1.8rem;
+  font-weight: 500;
+  
+
+  color: rgb(255, 255, 255);
+}
+footer {
+  background-color: #5057b9;
+}
+footer .logo__icon {
+  height: 80px;
+  width: 80px;
+}
+.copyright{
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.copy{
+  color: rgb(173, 173, 173);
+  opacity: 0.8;
+  font-size: 1.6rem;
+}
+.dk{
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
 }
