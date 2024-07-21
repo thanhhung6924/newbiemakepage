@@ -410,7 +410,9 @@ a {
   padding-bottom: 40px;
   margin-top: 50px;
   position: relative;
-  justify-content: space-between;
+justify-content: space-between;
+
+  
 }
 .intro__filter {
   height: 100%;
@@ -657,6 +659,9 @@ a {
   align-items: center;
   justify-content: center;
   width: 50px;
+}
+.section {
+  will-change: transform;
 }
 .hocbong__icon--learnmore i {
   text-align: center;
@@ -970,6 +975,9 @@ a {
   color: #000000;
   font-weight: 800;
 }
+.reason__img{
+  background-color: transparent;
+}
 .rh1 {
   text-align: start;
   color: white;
@@ -980,10 +988,11 @@ a {
   color: rgb(5, 5, 5);
 }
 .reason__img {
-  height: 200px;
+  height: 250px;
   width: 300px;
   color: #000000;
-  background-color: #000000;
+  background-color: transparent;
+  object-fit: cover;
 }
 .reason__item .container {
   display: flex;

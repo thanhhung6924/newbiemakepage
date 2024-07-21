@@ -27,9 +27,9 @@ $(".filter__gallary").click(function (event) {
     isClickable = true; // Đảm bảo cho phép click sau khoảng delay
   }, clickDelay);
 });
-setInterval(() => {
-  $(".filter__gallary").click();
-}, 4000);
+// setInterval(() => {
+//   $(".filter__gallary").click();
+// }, 4000);
 // Khởi tạo active__gallary cho phần tử đầu tiên
 pages[currentIndex].classList.add("active__gallary");
 // //////////////////
@@ -174,9 +174,9 @@ document.querySelectorAll(".randomtext").forEach((element) => {
     }, 100);
   };
 });
-setInterval(function() {
-  $(".randomtext").trigger('mouseover')
-},10000)
+// setInterval(function() {
+//   $(".randomtext").trigger('mouseover')
+// },10000)
 ///////////////////////
 //reason
 $(".reason__list").slideUp();
@@ -208,3 +208,17 @@ $(".contact__info").click(function () {
 
 
 })
+
+
+///////////////////
+
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    freeMode: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+
