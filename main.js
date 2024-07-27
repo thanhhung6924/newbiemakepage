@@ -63,7 +63,7 @@ gsap.to(sections, {
     trigger: ".horizontalt",
     pin: true,
     scrub: 1,
-    snap: 1 / (sections.length - 1),
+    // snap: 1 / (sections.length - 1),
     end: () => "+=" + document.querySelector(".horizontalt").offsetWidth,
   },
 });
@@ -145,35 +145,35 @@ gsap.to(".cloud ", {
 });
 
 //////////////////////////
-const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+// const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-document.querySelectorAll(".randomtext").forEach((element) => {
-  let originalText = element.dataset.value; // Lấy văn bản gốc từ thuộc tính data-value
+// document.querySelectorAll(".randomtext").forEach((element) => {
+//   let originalText = element.dataset.value; // Lấy văn bản gốc từ thuộc tính data-value
 
-  element.onmouseover = function (event) {
-    let iterations = 0;
-    const interval = setInterval(() => {
-      let newText = ""; // Chuỗi mới sau khi thay đổi
+//   element.onmouseover = function (event) {
+//     let iterations = 0;
+//     const interval = setInterval(() => {
+//       let newText = ""; // Chuỗi mới sau khi thay đổi
 
-      // Tạo chuỗi ngẫu nhiên từng ký tự cho đến khi đủ độ dài
-      for (let i = 0; i < originalText.length; i++) {
-        if (i < Math.floor(iterations)) {
-          newText += originalText[i]; // Giữ nguyên ký tự từ văn bản gốc
-        } else {
-          newText += letters[Math.floor(Math.random() * 26)]; // Chọn ngẫu nhiên một ký tự từ letters
-        }
-      }
+//       // Tạo chuỗi ngẫu nhiên từng ký tự cho đến khi đủ độ dài
+//       for (let i = 0; i < originalText.length; i++) {
+//         if (i < Math.floor(iterations)) {
+//           newText += originalText[i]; // Giữ nguyên ký tự từ văn bản gốc
+//         } else {
+//           newText += letters[Math.floor(Math.random() * 26)]; // Chọn ngẫu nhiên một ký tự từ letters
+//         }
+//       }
 
-      event.target.innerText = newText; // Gán văn bản mới vào phần tử
+//       event.target.innerText = newText; // Gán văn bản mới vào phần tử
 
-      if (iterations >= originalText.length) {
-        clearInterval(interval); // Dừng interval khi đã hoàn thành
-      }
+//       if (iterations >= originalText.length) {
+//         clearInterval(interval); // Dừng interval khi đã hoàn thành
+//       }
 
-      iterations += 1 / 3; // Tăng số lần lặp
-    }, 100);
-  };
-});
+//       iterations += 1 / 3; // Tăng số lần lặp
+//     }, 100);
+//   };
+// });
 // setInterval(function() {
 //   $(".randomtext").trigger('mouseover')
 // },10000)
@@ -222,3 +222,5 @@ $(".contact__info").click(function () {
     },
   });
 
+
+   
