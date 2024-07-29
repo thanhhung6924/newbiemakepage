@@ -27,9 +27,9 @@ $(".filter__gallary").click(function (event) {
     isClickable = true; // Đảm bảo cho phép click sau khoảng delay
   }, clickDelay);
 });
-// setInterval(() => {
-//   $(".filter__gallary").click();
-// }, 4000);
+setInterval(() => {
+  $(".filter__gallary").click();
+}, 4000);
 // Khởi tạo active__gallary cho phần tử đầu tiên
 pages[currentIndex].classList.add("active__gallary");
 // //////////////////
