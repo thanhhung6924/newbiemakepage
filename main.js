@@ -179,11 +179,11 @@ gsap.to(".cloud ", {
 // },10000)
 ///////////////////////
 //reason
-$(".reason__list").slideUp();
-$(".btn__reason").click(function () {
-  $(".reason__list").slideToggle();
+// $(".reason__list").slideUp();
+// $(".btn__reason").click(function () {
+//   $(".reason__list").slideToggle();
   
-});
+// });
 
 
   $(".desc__hide").slideUp();
