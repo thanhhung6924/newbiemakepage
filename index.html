@@ -11,6 +11,8 @@
     <script src="./gsap.min.js"></script>
     <!-- style.css -->
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <!-- aos -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- swiper -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./assets/css/swiper-bundle.min.css">
@@ -122,7 +124,7 @@
       <div class="container">
         <div class="header__top">
           <!-- logo -->
-          <div class="header__top--logo">
+          <!-- <div class="header__top--logo">
             <img src="./assets/img/logo.svg" alt="" class="logo__icon" />
             <div class="logo__sologan">
               <h4 class="vanhien randomtext" data-value="VANHIEN">VANHIEN</h4>
@@ -130,7 +132,8 @@
                 UNIVERSITY</p>
               </p>
             </div>
-          </div>
+          </div> -->
+          <img id="logo_img" title="Đại học Văn Hiến" src="https://lienthong.vhu.edu.vn/wp-content/uploads/2022/02/logo.png" alt="Đại học Văn Hiến" style="max-height: 88px;">
           <!-- navbar -->
           <div class="navbar">
             <ul class="navbar__list">
@@ -186,7 +189,7 @@
           <div class="filter__gallary"></div>
           <div class="container">
             <div class="gallary__body">
-              <h1 class="gallary__heading">
+              <h1 class="gallary__heading" data-aos="fade-right">
                 Khởi đầu hành trình mới, hướng tới tương lai tươi sáng
               </h1>
             </div>
@@ -221,7 +224,7 @@
                   class="info__desc info__desc2"
                   data-value="HỌC PHÍ ĐƯƠC GIẢM Ở HỌC KỲ I"
                 >
-                  HỌC PHÍ ĐƯƠC GIẢM Ở HỌC KỲ I
+               HỌC PHÍ KỲ I KHI ĐĂNG KÝ MYU
                 </p>
               </div>
               <div class="info__item">
@@ -416,6 +419,7 @@
             <div class="hook__body">
               <div class="discovery">
                 <h2 class="hook__heading">Khám phá các cột móc</h2>
+                <div class="location"><i class="fa-solid fa-location-dot"></i></div>
               </div>
               <div class="hook__list">
                 <div class="hook__item">
@@ -447,7 +451,7 @@
           <div class="ctn1">
             <div class="container">
               <div class="test orange hightline">
-                <h1 class="thutuc">Hệ thống đào tạo</h1>
+                <h1 class="thutuc " data-aos="fade-right">Hệ thống đào tạo</h1>
                 <div class="thuthuc__title">
                   <p class="thutuc__title--desc">Hệ thống đào tạo của Đại học Văn Hiến cam kết mang đến chất lượng giảng dạy hàng đầu với phương pháp đổi mới, hỗ trợ sinh viên phát triển toàn diện cả về kỹ năng lẫn kiến thức.</p>
                   <a href="" class="thutuc__link">Xem tất cả</a>
@@ -463,6 +467,7 @@
                       <p class="thutuc__content--desc">-Tốt nghiệp đại học loại giỏi trở lên</p>
                       <p class="thutuc__content--desc"><strong>Hình thức tuyển sinh :</strong>Xét tuyển </p>
                       <p class="thutuc__content--desc"><strong>Thời gian học :</strong> 3-4 năm </p>
+                     <div class="ok"> <a href="" class="action__btn btn btn__thutuc">Đăng ký ngay</a></div>
                     </div>
                   </div>
                   <div class="thutuc__item">
@@ -475,6 +480,7 @@
                       <p class="thutuc__content--desc">-Tốt nghiệp đại học loại giỏi trở lên</p>
                       <p class="thutuc__content--desc"><strong>Hình thức tuyển sinh :</strong>Xét tuyển </p>
                       <p class="thutuc__content--desc"><strong>Thời gian học :</strong> 3-4 năm </p>
+                      <div class="ok"> <a href="" class="action__btn btn btn__thutuc">Đăng ký ngay</a></div>
                     </div>
                   </div>
                   <div class="thutuc__item">
@@ -487,6 +493,7 @@
                       <p class="thutuc__content--desc">-Tốt nghiệp đại học loại giỏi trở lên</p>
                       <p class="thutuc__content--desc"><strong>Hình thức tuyển sinh :</strong>Xét tuyển </p>
                       <p class="thutuc__content--desc"><strong>Thời gian học :</strong> 3-4 năm </p>
+                      <div class="ok"> <a href="" class="action__btn btn btn__thutuc">Đăng ký ngay</a></div>
                     </div>
                   </div>
                   
@@ -501,7 +508,7 @@
           <div class="ctn1">
             <div class="test yellow">
               <div class="container">
-                <h1 class="heading__phuongthuc">Thủ tục xét tuyển</h1>
+                <h1 class="heading__phuongthuc" data-aos="fade-down">Thủ tục xét tuyển</h1>
                 <div class="phuongthuc__list">
                  
                   <div class="phuongthuc__item">
@@ -554,7 +561,7 @@
               <div class="container">
                 <div class="hocbong__body">
                   <div class="hocbong__content">
-                    <h1 class="hocbong__heading">
+                    <h1 class="hocbong__heading" data-aos="fade-down">
                       Học bổng & Hỗ trợ tài chính
                     </h1>
                     <p class="hocbong__desc">
@@ -661,7 +668,7 @@
                 <p class="csvc__desc">
                   Hiện nay, Trường Đại học Văn Hiến có 07 cơ sở học tập với hệ
                   thống cơ sở vật chất khang trang, đầy đủ tiện nghi để đáp ứng
-                  đầy đủ nhu cầu học tập, nghiên cứu của sinh viên tất cả các
+             đầy đủ nhu cầu học tập, nghiên cứu của sinh viên tất cả các
                   ngành học.
                 </p>
               </div>
@@ -719,13 +726,13 @@
           <div class="activiti__body">
             <!--  -->
             <div class="activity__top">
-              <h1 class="activity__heading">
+              <h1 class="activity__heading" style="text-align: center;">
                 MyU đồng hành cùng phụ huynh và thí sinh
               </h1>
               <div class="activiti__list">
                 <div class="activiti__item">
                   <div class="filter__activiti"></div>
-                  <img src="./assets/img/myu-d4-0.png" alt="" />
+                  <img src="./assets/img/myu1.png" alt="" />
                 </div>
                 <div class="activiti__item">
                   <div class="filter__activiti"></div>
@@ -733,7 +740,7 @@
                 </div>
                 <div class="activiti__item">
                   <div class="filter__activiti"></div>
-                  <img src="./assets/img/mu3.png" alt="" />
+                  <img src="./assets/img/myu3.png" alt="" />
                 </div>
                 <div class="activiti__item">
                   <div class="filter__activiti"></div>
@@ -769,80 +776,84 @@
         </div>
       </div>
       <div class="reason">
-        <div class="reason__body">
-          <div class="title__main">
-            <div class="container">
-              <h1 class="heaing__main">Vì sao chọn đại học Văn Hiến ?</h1>
-              <p class="desc__main">
-                Đại học Văn Hiến luôn không ngừng đổi mới, phát triển, phấn đấu
-                trở thành một giảng đường đại học lý tưởng để nuôi dưỡng tài
-                năng vốn có và phát triển phẩm chất công dân toàn cầu cho thế hệ
-                trẻ Gen Z. Với bề dày kinh nghiệm 24 năm hoạt động, trường không
-                ngừng nâng cao chất lượng đào tạo và đã có những bước chuyển
-                mình để luôn thích ứng với sự phát triển của thời đại. Vậy, Đại
-                học Văn Hiến đã có những cam kết nổi bật nào để các thế hệ Gen Z
-                có thể yên tâm gửi gắm tương lai của mình? Câu trả lời nằm trong
-                3 lý do sau đây.
-              </p>
-              <div class="btn__reason">Xem thêm</div>
-            </div>
-          </div>
-          <div class="reason__list">
-            <div class="reason__item it1">
+        <div class="backdrop">
+          <div class="reason__body">
+            <div class="title__main">
               <div class="container">
-                <div class="reason__content">
-                  <h1 class="reason__heading rh1">Chuyên nghiệp đào tạo</h1>
-                  <p class="reason__desc">
-                    Đại học Văn Hiến gây ấn tượng bởi triết lý đào tạo thực tế,
-                    ấn tượng: “Thành Nhân trước thành Danh”. Trường xác định mục
-                    tiêu xây dựng thế hệ nhân lực mới toàn diện vừa đầy đủ phẩm
-                    chất đạo đức, có trách nhiệm với bản thân và cộng đồng, vừa
-                    có trình độ chuyên môn cao, bản lĩnh đương đầu với những
-                    thách thức của thị trường.
-                  </p>
-                  <div class="btn__reason">Tìm hiểu</div>
-                </div>
-                <img src="./assets/img/image-removebg-preview (5).png" alt="" class="reason__img" />
+                <h1 class="heaing__main">Vì sao chọn đại học Văn Hiến ?</h1>
+                <p class="desc__main">
+                  Đại học Văn Hiến luôn không ngừng đổi mới, phát triển, phấn đấu
+                  trở thành một giảng đường đại học lý tưởng để nuôi dưỡng tài
+                  năng vốn có và phát triển phẩm chất công dân toàn cầu cho thế hệ
+                  trẻ Gen Z. Với bề dày kinh nghiệm 24 năm hoạt động, trường không
+                  ngừng nâng cao chất lượng đào tạo và đã có những bước chuyển
+                  mình để luôn thích ứng với sự phát triển của thời đại. Vậy, Đại
+                  học Văn Hiến đã có những cam kết nổi bật nào để các thế hệ Gen Z
+                  có thể yên tâm gửi gắm tương lai của mình? Câu trả lời nằm trong
+                  3 lý do sau đây.
+                </p>
+                <div class="btn__reason">Xem thêm</div>
               </div>
             </div>
-            <div class="reason__item it2">
-              <div class="container">
-                <img src="./assets/img/image-removebg-preview (1).png" class="reason__img" />
-                <div class="reason__content">
-                  <h1 class="reason__heading rh2">
-                    Kiến tập từ năm nhất, cơ hội du học, giới thiệu việc làm
-                    rộng mở
-                  </h1>
-                  <p class="reason__desc">
-                    Một trong những điểm nổi bật thu hút sinh viên của Đại học
-                    Văn Hiến chính là chương trình đào tạo theo định hướng ứng
-                    dụng nghề nghiệp. Thông qua các chương trình trải nghiệm
-                    thực tế tại doanh nghiệp ngay từ năm nhất, các bạn sinh viên
-                    sẽ định hình rõ hơn về sự lựa chọn ngành nghề và con đường
-                    sự nghiệp tương lai.
-                  </p>
-                  <div class="btn__reason">Tìm hiểu</div>
+            <div class="reason__list">
+              <div class="reason__item it1">
+                <div class="container">
+                  <div class="reason__content">
+                    <h1 class="reason__heading rh1">Chuyên nghiệp đào tạo</h1>
+                    <p class="reason__desc">
+                      Đại học Văn Hiến gây ấn tượng bởi triết lý đào tạo thực tế,
+                      ấn tượng: “Thành Nhân trước thành Danh”. Trường xác định mục
+                      tiêu xây dựng thế hệ nhân lực mới toàn diện vừa đầy đủ phẩm
+                      chất đạo đức, có trách nhiệm với bản thân và cộng đồng, vừa
+                      có trình độ chuyên môn cao, bản lĩnh đương đầu với những
+                      thách thức của thị trường.
+                    </p>
+                    <div class="btn__reason">Tìm hiểu</div>
+                  </div>
+                  <img src="./assets/img/image-removebg-preview (5).png" alt="" class="reason__img" />
                 </div>
               </div>
-            </div>
-            <div class="reason__item it3">
-              <div class="container">
-                <div class="reason__content">
-                  <h1 class="reason__heading rh3">
-                    Phát triển phẩm chất công dân toàn cầu
-                  </h1>
-                  <p class="reason__desc">
-                    Có thể nói việc tạo ra một sân chơi bổ ích để sinh viên trau
-                    dồi kỹ năng mềm và phát triển năng khiếu là nhiệm vụ không
-                    kém phần quan trọng trong môi trường giáo dục đại học hiện
-                    đại. Không chỉ có “cầm - kỳ - thi - họa”, tại Đại học Văn
-                    Hiến, sinh viên có thể thoải mái lựa chọn tham gia 30 câu
-                    lạc bộ kỹ năng của trường như Truyền thông và sự kiện, Công
-                    tác xã hội, Doanh nhân bản lĩnh, Nhiếp ảnh, Guitar, Bóng đá…
-                  </p>
-                  <div class="btn__reason">Tìm hiểu</div>
+             
+              <div class="reason__item it2">
+                <div class="container">
+                  <img src="./assets/img/image-removebg-preview (1).png" class="reason__img" />
+                  <div class="reason__content">
+                    <h1 class="reason__heading rh2" >
+                      Kiến tập từ năm nhất, cơ hội du học, giới thiệu việc làm
+                      rộng mở
+                    </h1>
+                    <p class="reason__desc " >
+                      Một trong những điểm nổi bật thu hút sinh viên của Đại học
+                      Văn Hiến chính là chương trình đào tạo theo định hướng ứng
+                      dụng nghề nghiệp. Thông qua các chương trình trải nghiệm
+                      thực tế tại doanh nghiệp ngay từ năm nhất, các bạn sinh viên
+                      sẽ định hình rõ hơn về sự lựa chọn ngành nghề và con đường
+                      sự nghiệp tương lai.
+                    </p>
+                    <div class="btn__reason">Tìm hiểu</div>
+                  </div>
                 </div>
-                <img src="./assets/img/image-removebg-preview.png" alt="" class="reason__img" />
+              </div>
+             
+              <div class="reason__item it3">
+                <div class="container">
+                  <div class="reason__content">
+                    <h1 class="reason__heading rh3">
+                      Phát triển phẩm chất công dân toàn cầu
+                    </h1>
+                    <p class="reason__desc" style="color: black;">
+                      Có thể nói việc tạo ra một sân chơi bổ ích để sinh viên trau
+                      dồi kỹ năng mềm và phát triển năng khiếu là nhiệm vụ không
+                      kém phần quan trọng trong môi trường giáo dục đại học hiện
+                      đại. Không chỉ có “cầm - kỳ - thi - họa”, tại Đại học Văn
+                      Hiến, sinh viên có thể thoải mái lựa chọn tham gia 30 câu
+                      lạc bộ kỹ năng của trường như Truyền thông và sự kiện, Công
+                      tác xã hội, Doanh nhân bản lĩnh, Nhiếp ảnh, Guitar, Bóng đá…
+                    </p>
+                    <div class="btn__reason">Tìm hiểu</div>
+                  </div>
+                  <img src="./assets/img/image-removebg-preview.png" alt="" class="reason__img" />
+                </div>
               </div>
             </div>
           </div>
@@ -866,7 +877,7 @@
               </div>
               <div class="mation">
                 <h4 class="mation__heading csvc__desc">
-                  Phòng Tuyển sinh và Truyền thông
+                  Trung tâm Chăm sóc Người học
                 </h4>
                 <div class="desc__hide">
                   <p class="desc__mation">Điện thoại: 028 7105 9999</p>
@@ -997,30 +1008,28 @@
               <div class="contact__item">
                 <div class="contact__info">
                   <h3 class="contact__heading">
-                    PHÒNG TUYỂN SINH VÀ TRUYỀN THÔNG
+                    TRUNG TÂM TƯ VẤN TUYỂN SINH
                   </h3>
                   <p class="contact__icon">+</p>
                 </div>
                 <div class="contact__content">
                   <p class="desc__contact">
-                    <strong>Trưởng phòng:</strong>Ts Nguyễn Thành Đạo
+                    <strong>Trưởng phòng:</strong>Nguyễn Văn A
                   </p>
                   <p class="desc__contact">
-                    <strong>Văn phòng:</strong>Phòng 2.04, Tòa nhà A, Cơ sở
-                    chính, 69/68 Đặng Thùy Trâm, Phường 13, Quận Bình Thạnh, Tp.
-                    Hồ Chí Minh
+                    <strong>Văn phòng:</strong> 613 Âu Cơ, Phường Phú Trung, Quận Tân Phú, TP.HCM
                   </p>
-                  <div class="phone__contact">
+                  <div class="phone__contact">  
                     <div class="icon__phone">
                       <i class="fa-solid fa-phone"></i>
                     </div>
-                    <p class="contact__desc">028.7105 9999</p>
+                    <p class="contact__desc">1800 1568</p>
                   </div>
                   <div class="phone__contact">
                     <div class="icon__phone">
                       <i class="fa-solid fa-envelope"></i>
                     </div>
-                    <p class="contact__desc">p.tstt@vanlanguni.edu.vn</p>
+                    <p class="contact__desc"> info@vhu.edu.vn</p>
                   </div>
                 </div>
               </div>
@@ -1028,30 +1037,28 @@
               <div class="contact__item">
                 <div class="contact__info">
                   <h3 class="contact__heading">
-                    PHÒNG TUYỂN SINH VÀ TRUYỀN THÔNG
+                    TRUNG TÂM CHĂM SÓC NGƯỜI HỌC
                   </h3>
                   <p class="contact__icon">+</p>
                 </div>
                 <div class="contact__content">
                   <p class="desc__contact">
-                    <strong>Trưởng phòng:</strong>Ts Nguyễn Thành Đạo
+                    <strong>Trưởng phòng:</strong>Nguyễn Văn A
                   </p>
-                  <p class="desc__contact"  >
-                    <strong>Văn phòng:</strong>Phòng 2.04, Tòa nhà A, Cơ sở
-                    chính, 69/68 Đặng Thùy Trâm, Phường 13, Quận Bình Thạnh, Tp.
-                    Hồ Chí Minh
+                  <p class="desc__contact">
+                    <strong>Văn phòng:</strong> 613 Âu Cơ, Phường Phú Trung, Quận Tân Phú, TP.HCM
                   </p>
-                  <div class="phone__contact">
+                  <div class="phone__contact">  
                     <div class="icon__phone">
                       <i class="fa-solid fa-phone"></i>
                     </div>
-                    <p class="contact__desc">028.7105 9999</p>
+                    <p class="contact__desc">1800 1568</p>
                   </div>
                   <div class="phone__contact">
                     <div class="icon__phone">
                       <i class="fa-solid fa-envelope"></i>
                     </div>
-                    <p class="contact__desc">p.tstt@vanlanguni.edu.vn</p>
+                    <p class="contact__desc"> info@vhu.edu.vn</p>
                   </div>
                 </div>
               </div>
@@ -1059,126 +1066,93 @@
               <div class="contact__item">
                 <div class="contact__info">
                   <h3 class="contact__heading">
-                    PHÒNG TUYỂN SINH VÀ TRUYỀN THÔNG
+                    TRUNG TÂM TRUYỀN THÔNG & TUYỂN SINH TRỰC TUYẾN
                   </h3>
                   <p class="contact__icon">+</p>
                 </div>
                 <div class="contact__content">
                   <p class="desc__contact">
-                    <strong>Trưởng phòng:</strong>Ts Nguyễn Thành Đạo
+                    <strong>Trưởng phòng:</strong>Nguyễn Văn A
                   </p>
                   <p class="desc__contact">
-                    <strong>Văn phòng:</strong>Phòng 2.04, Tòa nhà A, Cơ sở
-                    chính, 69/68 Đặng Thùy Trâm, Phường 13, Quận Bình Thạnh, Tp.
-                    Hồ Chí Minh
+                    <strong>Văn phòng:</strong> 613 Âu Cơ, Phường Phú Trung, Quận Tân Phú, TP.HCM
                   </p>
-                  <div class="phone__contact">
+                  <div class="phone__contact">  
                     <div class="icon__phone">
                       <i class="fa-solid fa-phone"></i>
                     </div>
-                    <p class="contact__desc">028.7105 9999</p>
+                    <p class="contact__desc">1800 1568</p>
                   </div>
                   <div class="phone__contact">
                     <div class="icon__phone">
                       <i class="fa-solid fa-envelope"></i>
                     </div>
-                    <p class="contact__desc">p.tstt@vanlanguni.edu.vn</p>
+                    <p class="contact__desc"> info@vhu.edu.vn</p>
                   </div>
                 </div>
               </div>
 
-              <div class="contact__item">
-                <div class="contact__info">
-                  <h3 class="contact__heading">
-                    PHÒNG TUYỂN SINH VÀ TRUYỀN THÔNG
-                  </h3>
-                  <p class="contact__icon">+</p>
-                </div>
-                <div class="contact__content">
-                  <p class="desc__contact">
-                    <strong>Trưởng phòng:</strong>Ts Nguyễn Thành Đạo
-                  </p>
-                  <p class="desc__contact">
-                    <strong>Văn phòng:</strong>Phòng 2.04, Tòa nhà A, Cơ sở
-                    chính, 69/68 Đặng Thùy Trâm, Phường 13, Quận Bình Thạnh, Tp.
-                    Hồ Chí Minh
-                  </p>
-                  <div class="phone__contact">
-                    <div class="icon__phone">
-                      <i class="fa-solid fa-phone"></i>
-                    </div>
-                    <p class="contact__desc">028.7105 9999</p>
-                  </div>
-                  <div class="phone__contact">
-                    <div class="icon__phone">
-                      <i class="fa-solid fa-envelope"></i>
-                    </div>
-                    <p class="contact__desc">p.tstt@vanlanguni.edu.vn</p>
-                  </div>
-                </div>
-              </div>
 
               <div class="contact__item">
                 <div class="contact__info">
                   <h3 class="contact__heading">
-                    PHÒNG TUYỂN SINH VÀ TRUYỀN THÔNG
+                    TRUNG TÂM PHỤC VỤ CỘNG ĐỒNG SINH VIÊN
                   </h3>
                   <p class="contact__icon">+</p>
                 </div>
                 <div class="contact__content">
                   <p class="desc__contact">
-                    <strong>Trưởng phòng:</strong>Ts Nguyễn Thành Đạo
+                    <strong>Trưởng phòng:</strong>Nguyễn Văn A
                   </p>
                   <p class="desc__contact">
-                    <strong>Văn phòng:</strong>Phòng 2.04, Tòa nhà A, Cơ sở
-                    chính, 69/68 Đặng Thùy Trâm, Phường 13, Quận Bình Thạnh, Tp.
-                    Hồ Chí Minh
+                    <strong>Văn phòng:</strong> 613 Âu Cơ, Phường Phú Trung, Quận Tân Phú, TP.HCM
                   </p>
-                  <div class="phone__contact">
+                  <div class="phone__contact">  
                     <div class="icon__phone">
                       <i class="fa-solid fa-phone"></i>
                     </div>
-                    <p class="contact__desc">028.7105 9999</p>
+                    <p class="contact__desc">1800 1568</p>
                   </div>
                   <div class="phone__contact">
                     <div class="icon__phone">
                       <i class="fa-solid fa-envelope"></i>
                     </div>
-                    <p class="contact__desc">p.tstt@vanlanguni.edu.vn</p>
+                    <p class="contact__desc"> info@vhu.edu.vn</p>
                   </div>
                 </div>
               </div>
 
+
               <div class="contact__item">
                 <div class="contact__info">
                   <h3 class="contact__heading">
-                    PHÒNG TUYỂN SINH VÀ TRUYỀN THÔNG
+                    TRUNG TÂM THAM VẤN TÂM LÝ
                   </h3>
                   <p class="contact__icon">+</p>
                 </div>
                 <div class="contact__content">
                   <p class="desc__contact">
-                    <strong>Trưởng phòng:</strong>Ts Nguyễn Thành Đạo
+                    <strong>Trưởng phòng:</strong>Nguyễn Văn A
                   </p>
                   <p class="desc__contact">
-                    <strong>Văn phòng:</strong>Phòng 2.04, Tòa nhà A, Cơ sở
-                    chính, 69/68 Đặng Thùy Trâm, Phường 13, Quận Bình Thạnh, Tp.
-                    Hồ Chí Minh
+                    <strong>Văn phòng:</strong> 613 Âu Cơ, Phường Phú Trung, Quận Tân Phú, TP.HCM
                   </p>
-                  <div class="phone__contact">
+                  <div class="phone__contact">  
                     <div class="icon__phone">
                       <i class="fa-solid fa-phone"></i>
                     </div>
-                    <p class="contact__desc">028.7105 9999</p>
+                    <p class="contact__desc">1800 1568</p>
                   </div>
                   <div class="phone__contact">
                     <div class="icon__phone">
                       <i class="fa-solid fa-envelope"></i>
                     </div>
-                    <p class="contact__desc">p.tstt@vanlanguni.edu.vn</p>
+                    <p class="contact__desc"> info@vhu.edu.vn</p>
                   </div>
                 </div>
               </div>
+
+              
             </div>
           </div>
         </div>
@@ -1191,7 +1165,7 @@
                 <div class="header__top--logo">
                   <img src="./assets/img/logo.svg" alt="" class="logo__icon" />
                   <div class="logo__sologan">
-                    <h4 class="vanhien " data-value="VANHIEN" style="width: 350px; font-size: 2.2rem; text-align: center; ">
+                    <h4 class="vanhien " data-value="VANHIEN" style="width: 350px; font-size: 2.2rem; text-align: center;  ">
                       TRƯỜNG ĐẠI HỌC VĂN HIẾN
                     </h4>
                     <p class="university " style="font-size: 1.6rem;" data-value="UNIVERSITY ">
@@ -1294,7 +1268,10 @@
         </div>
       </footer>
     </main>
-
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./main.js"></script>
   </body>

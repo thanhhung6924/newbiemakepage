@@ -1,0 +1,58 @@
+/* PC */
+@media(min-width:992px){
+
+}
+
+
+/* Tablet & mobile */
+@media(max-width:991.98px){
+.navbar{
+    display: none;
+    
+}
+.header{
+    position: static ;
+}
+.body{
+    margin-top: 0;
+}
+.gallary__heading{
+   font-size: 6rem;
+   width: 70%;
+   top: 15%;
+}
+.menu{
+    display: inline-block;
+    color: #244186;
+    font-size: 3rem;
+}
+.action__icon--gmail,.action__icon--ring{
+    display: none ;
+}
+.gallary__item{
+    object-fit: cover;
+    background-position: center;
+} 
+.gallary{
+    height: 55%;
+}
+.horizontalt {
+    background-image: url("../img/download.webp");
+  
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 400vh;
+    background-size: contain;
+  }
+  
+}
+/* Tablet */
+@media(min-width:768px)and(max-width:991.98px){
+    
+}
+
+/* mobile */
+@media(Max-width:767.98px){
+   
+}
