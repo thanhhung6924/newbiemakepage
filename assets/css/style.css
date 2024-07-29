@@ -714,11 +714,15 @@ line-height: 1.5;
 
   opacity: 0.9;
 }
+.thutuc__item:hover .thutuc__img{
+  transform: scale(1.05);
+}
 .thutuc__img {
   height: 100%;
   width: 100%;
   background-position: center;
   object-fit: cover;
+  transition: 0.3s;
   border-radius: 10px;
 }
 .thutuc,
@@ -1034,7 +1038,11 @@ line-height: 1.5;
   border-radius: 10px;
   overflow: hidden;
 }
+.activiti__item:hover img{
+  transform: scale(1.2);
+}
 .filter__activiti {
+  z-index: 1;
   height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.1);
@@ -1042,7 +1050,9 @@ line-height: 1.5;
 }
 .activiti__item img {
   width: 100%;
+  z-index: 0;
   height: 100%;
+  transition: 0.3s;
   background-size: contain;
 }
 .activiti__bottom {
